@@ -1,16 +1,27 @@
 {
   "name": "playground",
-  "version": "1.0.0",
-  "description": "Está aplicação foi desenvolvida para servir de base para executar testes de automação e alguns testes manuais.",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-router-dom": "^6.25.1"
+  },
   "devDependencies": {
-    "tailwindcss": "^3.4.6"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
