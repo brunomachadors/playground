@@ -1,4 +1,4 @@
-'use client'; // Adicione esta linha para indicar que é um componente de cliente
+'use client'; // Indica que é um componente do cliente
 
 import React, { useState } from 'react';
 
@@ -16,14 +16,16 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <div className="flex justify-center  w-full py-12">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full border border-gray-300">
-        <h2 className="text-2xl font-bold mb-6 text-gray-900">Login</h2>
+    <div className="flex justify-center items-center bg-gray-800 w-full mt-10">
+      <div className="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full border ">
+        <h2 className="text-2xl font-bold mb-6 text-white text-center">
+          Login
+        </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label
               htmlFor="username"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-white"
             >
               Username
             </label>
@@ -32,14 +34,14 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
               required
             />
           </div>
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-white"
             >
               Password
             </label>
@@ -48,16 +50,18 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
               required
             />
           </div>
-          <button
-            type="submit"
-            className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-          >
-            Sign In
-          </button>
+          <div className="flex justify-center w-full">
+            <button
+              type="submit"
+              className="w-1/3 bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              Sign In
+            </button>
+          </div>
         </form>
       </div>
     </div>
