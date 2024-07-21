@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'; // Importar useRouter do Next.js
-import LoginForm from '../components/LoginForm';
+import { LoginForm } from '../components/LoginForm';
 import { USERS } from '../data/users';
 import { InstructionsLogin } from '../components/Instructions';
 import { StatusLogin } from '../components/Status';
