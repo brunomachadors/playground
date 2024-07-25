@@ -3,10 +3,10 @@ import Image from 'next/image';
 export default function Page() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-800 text-white">
-      <div className="relative w-11/12 max-w-2xl h-48 mx-auto overflow-hidden mb-6">
+      <div className="relative w-11/12 max-w-4xl h-60 mx-auto overflow-hidden mb-6">
         <div className="absolute inset-0">
           <Image
-            src="https://res.cloudinary.com/dtglidvcw/image/upload/v1718663616/BUGBUSTER/ldz2movmit4domxmp230.jpg"
+            src="https://res.cloudinary.com/dtglidvcw/image/upload/v1721943129/BUGBUSTER/smsccp4wsl8o6v4tmmfb.jpg"
             alt="Bug Buster Mentoria Banner"
             layout="fill"
             objectFit="cover"
@@ -16,7 +16,7 @@ export default function Page() {
       </div>
       <main className="flex flex-col items-center justify-start flex-grow p-6">
         <section className="text-center mb-16">
-          <p className="text-lg max-w-3xl mx-auto">
+          <p className="text-lg max-w-4xl mx-auto">
             Esta página foi desenvolvida pela equipe do Bug Buster Mentoria com
             o intuito educativo. Aqui, você encontrará uma série de desafios
             para scripts de automação de teste, incluindo logins, formulários e
