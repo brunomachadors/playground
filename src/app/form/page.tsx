@@ -85,12 +85,7 @@ export default function Form() {
     e.preventDefault();
     if (validate()) {
       console.log('Form data:', formData);
-
-      // Simula uma chamada de API ou processamento
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      setFormSubmitted(true);
-      router.push('/submittedform'); // Redireciona para a página de sucesso
+      router.push('/submittedform');
     }
   };
 
@@ -99,195 +94,191 @@ export default function Form() {
       <InstructionsForm />
       <main className="flex flex-col items-center justify-start mt-10">
         <div className="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full border border-white">
-          {formSubmitted ? (
-            <Submitedform />
-          ) : (
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              <h2 className="text-2xl font-bold mb-6 text-white text-center">
-                Cadastro
-              </h2>
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-white"
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <h2 className="text-2xl font-bold mb-6 text-white text-center">
+              Cadastro
+            </h2>
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-white"
+              >
+                Nome <span className="text-white">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 bg-white"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Digite seu nome"
+              />
+              {errors.name && (
+                <p className="text-red-400 text-sm">{errors.name}</p>
+              )}
+            </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-white"
+              >
+                Email <span className="text-white">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 bg-white"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Digite seu e-mail"
+              />
+              {errors.email && (
+                <p className="text-red-400 text-sm">{errors.email}</p>
+              )}
+            </div>
+            <div>
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-white"
+              >
+                Senha <span className="text-white">*</span>
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 bg-white"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="Digite sua senha"
+              />
+              {errors.password && (
+                <p className="text-red-400 text-sm">{errors.password}</p>
+              )}
+            </div>
+            <div>
+              <label
+                htmlFor="country"
+                className="block text-sm font-medium text-white"
+              >
+                País <span className="text-white">*</span>
+              </label>
+              <select
+                id="country"
+                name="country"
+                className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 bg-white"
+                value={formData.country}
+                onChange={handleChange}
+              >
+                <option value="">Selecione um país</option>
+                <option value="usa">Estados Unidos</option>
+                <option value="canada">Canadá</option>
+                <option value="mexico">México</option>
+              </select>
+              {errors.country && (
+                <p className="text-red-400 text-sm">{errors.country}</p>
+              )}
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-white">
+                Gênero <span className="text-white">*</span>
+              </label>
+              <div className="mt-1 text-white">
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    className="form-radio"
+                    onChange={handleChange}
+                    checked={formData.gender === 'male'}
+                  />
+                  <span className="ml-2">Masculino</span>
+                </label>
+                <label className="inline-flex items-center ml-6">
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="female"
+                    className="form-radio"
+                    onChange={handleChange}
+                    checked={formData.gender === 'female'}
+                  />
+                  <span className="ml-2">Feminino</span>
+                </label>
+                <label className="inline-flex items-center ml-6">
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="other"
+                    className="form-radio"
+                    onChange={handleChange}
+                    checked={formData.gender === 'other'}
+                  />
+                  <span className="ml-2">Outro</span>
+                </label>
+              </div>
+              {errors.gender && (
+                <p className="text-red-400 text-sm">{errors.gender}</p>
+              )}
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-white">
+                Lazer
+              </label>
+              <div className="mt-1 text-white">
+                <label className="inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    name="hobbies"
+                    value="reading"
+                    className="form-checkbox"
+                    onChange={handleChange}
+                    checked={formData.hobbies.includes('reading')}
+                  />
+                  <span className="ml-2">Ler</span>
+                </label>
+                <label className="inline-flex items-center ml-6">
+                  <input
+                    type="checkbox"
+                    name="hobbies"
+                    value="travelling"
+                    className="form-checkbox"
+                    onChange={handleChange}
+                    checked={formData.hobbies.includes('travelling')}
+                  />
+                  <span className="ml-2">Viajar</span>
+                </label>
+                <label className="inline-flex items-center ml-6">
+                  <input
+                    type="checkbox"
+                    name="hobbies"
+                    value="gaming"
+                    className="form-checkbox"
+                    onChange={handleChange}
+                    checked={formData.hobbies.includes('gaming')}
+                  />
+                  <span className="ml-2">Video Games</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <div className="flex justify-center w-full">
+                <Button
+                  type="submit"
+                  color="white"
+                  textColor="gray-800"
+                  borderColor="gray-300"
+                  hoverColor="gray-100"
+                  focusColor="gray-500"
                 >
-                  Nome <span className="text-white">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 bg-white"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Digite seu nome"
-                />
-                {errors.name && (
-                  <p className="text-red-400 text-sm">{errors.name}</p>
-                )}
+                  Enviar
+                </Button>
               </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-white"
-                >
-                  Email <span className="text-white">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 bg-white"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Digite seu e-mail"
-                />
-                {errors.email && (
-                  <p className="text-red-400 text-sm">{errors.email}</p>
-                )}
-              </div>
-              <div>
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium text-white"
-                >
-                  Senha <span className="text-white">*</span>
-                </label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 bg-white"
-                  value={formData.password}
-                  onChange={handleChange}
-                  placeholder="Digite sua senha"
-                />
-                {errors.password && (
-                  <p className="text-red-400 text-sm">{errors.password}</p>
-                )}
-              </div>
-              <div>
-                <label
-                  htmlFor="country"
-                  className="block text-sm font-medium text-white"
-                >
-                  País <span className="text-white">*</span>
-                </label>
-                <select
-                  id="country"
-                  name="country"
-                  className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 bg-white"
-                  value={formData.country}
-                  onChange={handleChange}
-                >
-                  <option value="">Selecione um país</option>
-                  <option value="usa">Estados Unidos</option>
-                  <option value="canada">Canadá</option>
-                  <option value="mexico">México</option>
-                </select>
-                {errors.country && (
-                  <p className="text-red-400 text-sm">{errors.country}</p>
-                )}
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-white">
-                  Gênero <span className="text-white">*</span>
-                </label>
-                <div className="mt-1 text-white">
-                  <label className="inline-flex items-center">
-                    <input
-                      type="radio"
-                      name="gender"
-                      value="male"
-                      className="form-radio"
-                      onChange={handleChange}
-                      checked={formData.gender === 'male'}
-                    />
-                    <span className="ml-2">Masculino</span>
-                  </label>
-                  <label className="inline-flex items-center ml-6">
-                    <input
-                      type="radio"
-                      name="gender"
-                      value="female"
-                      className="form-radio"
-                      onChange={handleChange}
-                      checked={formData.gender === 'female'}
-                    />
-                    <span className="ml-2">Feminino</span>
-                  </label>
-                  <label className="inline-flex items-center ml-6">
-                    <input
-                      type="radio"
-                      name="gender"
-                      value="other"
-                      className="form-radio"
-                      onChange={handleChange}
-                      checked={formData.gender === 'other'}
-                    />
-                    <span className="ml-2">Outro</span>
-                  </label>
-                </div>
-                {errors.gender && (
-                  <p className="text-red-400 text-sm">{errors.gender}</p>
-                )}
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-white">
-                  Lazer
-                </label>
-                <div className="mt-1 text-white">
-                  <label className="inline-flex items-center">
-                    <input
-                      type="checkbox"
-                      name="hobbies"
-                      value="reading"
-                      className="form-checkbox"
-                      onChange={handleChange}
-                      checked={formData.hobbies.includes('reading')}
-                    />
-                    <span className="ml-2">Ler</span>
-                  </label>
-                  <label className="inline-flex items-center ml-6">
-                    <input
-                      type="checkbox"
-                      name="hobbies"
-                      value="travelling"
-                      className="form-checkbox"
-                      onChange={handleChange}
-                      checked={formData.hobbies.includes('travelling')}
-                    />
-                    <span className="ml-2">Viajar</span>
-                  </label>
-                  <label className="inline-flex items-center ml-6">
-                    <input
-                      type="checkbox"
-                      name="hobbies"
-                      value="gaming"
-                      className="form-checkbox"
-                      onChange={handleChange}
-                      checked={formData.hobbies.includes('gaming')}
-                    />
-                    <span className="ml-2">Video Games</span>
-                  </label>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-center w-full">
-                  <Button
-                    type="submit"
-                    color="white"
-                    textColor="gray-800"
-                    borderColor="gray-300"
-                    hoverColor="gray-100"
-                    focusColor="gray-500"
-                  >
-                    Enviar
-                  </Button>
-                </div>
-              </div>
-            </form>
-          )}
+            </div>
+          </form>
         </div>
       </main>
     </div>
