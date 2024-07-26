@@ -24,7 +24,7 @@ export default function LoginPage() {
           setStatus('invalid_pass');
         }
 
-        return newTentative; // Atualiza o estado com o novo valor
+        return newTentative;
       } else if (
         username === USERS.regular.login &&
         password === USERS.regular.pass
