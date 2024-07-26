@@ -1,5 +1,3 @@
-// src/app/form/page.tsx
-
 'use client'; // Indica que é um componente do cliente
 
 import React, { useState } from 'react';
@@ -122,6 +120,7 @@ export default function Form() {
                   className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 bg-white"
                   value={formData.name}
                   onChange={handleChange}
+                  placeholder="Digite seu nome"
                 />
                 {errors.name && (
                   <p className="text-red-400 text-sm">{errors.name}</p>
@@ -141,6 +140,7 @@ export default function Form() {
                   className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 bg-white"
                   value={formData.email}
                   onChange={handleChange}
+                  placeholder="Digite seu e-mail"
                 />
                 {errors.email && (
                   <p className="text-red-400 text-sm">{errors.email}</p>
@@ -160,6 +160,7 @@ export default function Form() {
                   className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 bg-white"
                   value={formData.password}
                   onChange={handleChange}
+                  placeholder="Digite sua senha"
                 />
                 {errors.password && (
                   <p className="text-red-400 text-sm">{errors.password}</p>
