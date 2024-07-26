@@ -1,6 +1,7 @@
 'use client'; // Indica que é um componente do cliente
 
 import React, { useState } from 'react';
+import Button from './Buttons';
 
 type LoginFormProps = {
   onSubmit: (username: string, password: string) => void;
@@ -55,12 +56,16 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
             />
           </div>
           <div className="flex justify-center w-full">
-            <button
+            <Button
               type="submit"
-              className="w-1/3 bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              color="white"
+              textColor="gray-800"
+              borderColor="gray-300"
+              hoverColor="gray-100"
+              focusColor="gray-500"
             >
-              Sign In
-            </button>
+              Logar
+            </Button>
           </div>
         </form>
       </div>
