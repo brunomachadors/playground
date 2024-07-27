@@ -1,7 +1,7 @@
 'use client'; // Indica que é um componente do cliente
 import React from 'react';
-import NavbarMobile from './Navbarmobile';
-import NavbarWeb from './Navbarweb';
+import NavbarMobile from './NavbarMobile';
+import NavbarWeb from './NavbarWeb';
 
 const Navbar = () => {
   return (
