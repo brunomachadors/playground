@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export default function Page() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-800 text-gray-100">
-      <div className="relative w-11/12 max-w-4xl h-60 mx-auto overflow-hidden mb-6">
+    <div className="flex flex-col min-h-screen bg-gray-800 text-gray-100 pt-6">
+      <div className="relative w-11/12 max-w-4xl h-60 mx-auto overflow-hidden mb-6 ">
         <div className="absolute inset-0">
           <Image
             src="https://res.cloudinary.com/dtglidvcw/image/upload/v1721943129/BUGBUSTER/smsccp4wsl8o6v4tmmfb.jpg"
@@ -30,8 +30,7 @@ export default function Page() {
           <ul className="list-disc list-inside text-lg space-y-2 text-center">
             <li>Login</li>
             <li>Formulários</li>
-            <li>Navegação</li>
-            <li>Interações com a UI</li>
+            <li>Tabela dinâmica</li>
             <li>E muito mais!</li>
           </ul>
         </section>
