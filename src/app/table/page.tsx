@@ -67,13 +67,21 @@ const CharacterTable: React.FC = () => {
             <table className="w-full bg-gray-800 border border-gray-300 text-center table-auto">
               <thead>
                 <tr>
-                  <th className="py-2 px-4 border-b border-gray-600">Image</th>
-                  <th className="py-2 px-4 border-b border-gray-600">Name</th>
-                  <th className="py-2 px-4 border-b border-gray-600">House</th>
-                  <th className="py-2 px-4 border-b border-gray-600">
+                  <th className="py-2 px-4 border-b border-gray-600 text-gray-100">
+                    Image
+                  </th>
+                  <th className="py-2 px-4 border-b border-gray-600 text-gray-100">
+                    Name
+                  </th>
+                  <th className="py-2 px-4 border-b border-gray-600 text-gray-100">
+                    House
+                  </th>
+                  <th className="py-2 px-4 border-b border-gray-600 text-gray-100">
                     Date of Birth
                   </th>
-                  <th className="py-2 px-4 border-b border-gray-600">Actor</th>
+                  <th className="py-2 px-4 border-b border-gray-600 text-gray-100">
+                    Actor
+                  </th>
                 </tr>
               </thead>
               <tbody>
