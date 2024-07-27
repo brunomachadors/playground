@@ -78,8 +78,11 @@ const CharacterTable: React.FC = () => {
               </thead>
               <tbody>
                 {characters.map((character) => (
-                  <tr key={character.id} className="hover:bg-gray-600">
-                    <td className="py-2 px-4 border-b border-gray-600">
+                  <tr
+                    key={character.id}
+                    className="hover:bg-gray-600 text-gray-100"
+                  >
+                    <td className="py-2 px-4 border-b border-gray-600 text-gray-100">
                       <div className="flex items-center justify-center w-16 h-16 relative">
                         <Image
                           src={character.image}
