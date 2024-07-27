@@ -30,8 +30,7 @@ export default function Page() {
           <ul className="list-disc list-inside text-lg space-y-2 text-center">
             <li>Login</li>
             <li>Formulários</li>
-            <li>Navegação</li>
-            <li>Interações com a UI</li>
+            <li>Tabela dinâmica</li>
             <li>E muito mais!</li>
           </ul>
         </section>
