@@ -48,10 +48,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="bg-gray-800 min-h-screen flex flex-col items-center justify-start pt-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gray-800 min-h-screen flex flex-col items-center justify-start pt-6 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-2xl mx-auto">
         <InstructionsLogin />
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center">
           <LoginForm onSubmit={handleLogin} />
         </div>
         <StatusLogin status={status}></StatusLogin>

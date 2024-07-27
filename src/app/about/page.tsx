@@ -3,8 +3,8 @@ import React from 'react';
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col justify-start items-center bg-gray-800 p-8">
-      <div className="bg-gray-800 border border-white p-8 rounded-lg shadow-lg max-w-3xl w-full">
-        <h1 className="text-3xl font-bold text-white mb-6 text-center">
+      <div className="bg-gray-800 border border-gray-100 p-8 rounded-lg shadow-lg max-w-3xl w-full">
+        <h1 className="text-3xl font-bold text-gray-100 mb-6 text-center">
           Sobre Mim
         </h1>
 
@@ -18,10 +18,10 @@ const About = () => {
             href="https://www.linkedin.com/in/brunomrs"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white rounded px-3 py-2 transition flex items-center"
+            className="text-gray-300 hover:bg-gray-800 hover:text-gray-100 rounded px-3 py-2 transition flex items-center"
           >
             <svg
-              className="w-8 h-8 text-white"
+              className="w-8 h-8 text-gray-100"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 0 24 24"
@@ -33,10 +33,10 @@ const About = () => {
             href="https://github.com/brunomachadors"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white rounded px-3 py-2 transition flex items-center"
+            className="text-gray-300 hover:bg-gray-800 hover:text-gray-100 rounded px-3 py-2 transition flex items-center"
           >
             <svg
-              className="w-8 h-8 text-white"
+              className="w-8 h-8 text-gray-100"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 0 24 24"
@@ -46,10 +46,10 @@ const About = () => {
           </a>
           <a
             href="mailto:brunomachadors@gmail.com"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white rounded px-3 py-2 transition flex items-center"
+            className="text-gray-300 hover:bg-gray-800 hover:text-gray-100 rounded px-3 py-2 transition flex items-center"
           >
             <svg
-              className="w-8 h-8 text-white"
+              className="w-8 h-8 text-gray-100"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 0 330.001 330.001"
@@ -62,9 +62,9 @@ const About = () => {
             href="https://medium.com/@brunomachadoricardosilva"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white rounded px-3 py-2 transition flex items-center"
+            className="text-gray-300 hover:bg-gray-800 hover:text-gray-100 rounded px-3 py-2 transition flex items-center"
           >
-            <span className="text-3xl font-semibold text-white">M</span>{' '}
+            <span className="text-3xl font-semibold text-gray-100">M</span>{' '}
             {/* Texto "M" como ícone */}
           </a>
         </div>
@@ -77,7 +77,7 @@ const About = () => {
             href="https://brunomachadors.github.io/bugbuster"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:bg-white hover:text-gray-700 rounded px-3 py-2 transition border-2 border-gray-300"
+            className="text-gray-300 hover:bg-gray-100 hover:text-gray-800 rounded px-3 py-2 transition border-2 border-gray-300"
           >
             <b>Bug Buster</b>
           </a>

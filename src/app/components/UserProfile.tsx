@@ -18,7 +18,7 @@ const UserProfile: React.FC = () => {
           <p className="text-lg font-bold mb-4">Usuário Logado</p>
           <button
             onClick={handleLogout}
-            className="w-full bg-red-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+            className="w-full bg-red-600 text-gray-100 py-2 px-4 rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
           >
             Logout
           </button>
