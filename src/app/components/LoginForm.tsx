@@ -63,7 +63,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
               color="gray-100"
               textColor="gray-800"
               borderColor="gray-300"
-              hoverColor="gray-100"
+              hoverColor="gray-200"
               focusColor="gray-500"
             >
               Logar

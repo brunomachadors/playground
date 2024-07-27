@@ -37,7 +37,7 @@ const CharacterTable: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-800 pt-6 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-800 pt-2 px-4 sm:px-6 lg:px-8">
       <InstructionsTable />
       <div className="max-w-5xl mx-auto mt-6 mb-6">
         <div className="block sm:hidden">
