@@ -44,7 +44,7 @@ const CharacterTable: React.FC = () => {
           {characters.map((character) => (
             <div
               key={character.id}
-              className="bg-gray-800 border border-white text-gray-100 mb-4 p-4 rounded-lg shadow-md flex flex-col items-center"
+              className="bg-gray-800 text-gray-100 mb-4 p-4 rounded-lg shadow-md flex flex-col items-center border"
             >
               <div className="w-24 h-24 relative mb-4">
                 <Image
@@ -78,7 +78,7 @@ const CharacterTable: React.FC = () => {
               </thead>
               <tbody>
                 {characters.map((character) => (
-                  <tr key={character.id} className="hover:bg-gray-700">
+                  <tr key={character.id} className="hover:bg-gray-600">
                     <td className="py-2 px-4 border-b border-gray-600">
                       <div className="flex items-center justify-center w-16 h-16 relative">
                         <Image

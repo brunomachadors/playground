@@ -9,25 +9,31 @@ export default function Navbar() {
           <div className="flex space-x-4">
             <Link
               href="/"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
+              className="text-gray-300 hover:bg-gray-800 hover:text-gray-100 px-3 py-2 rounded-md text-lg font-medium"
             >
               HOME
             </Link>
             <Link
               href="/login"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
+              className="text-gray-300 hover:bg-gray-800 hover:text-gray-100 px-3 py-2 rounded-md text-lg font-medium"
             >
               LOGIN
             </Link>
             <Link
               href="/form"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
+              className="text-gray-300 hover:bg-gray-800 hover:text-gray-100 px-3 py-2 rounded-md text-lg font-medium"
             >
               FORM
             </Link>
             <Link
+              href="/table"
+              className="text-gray-300 hover:bg-gray-800 hover:text-gray-100 px-3 py-2 rounded-md text-lg font-medium"
+            >
+              TABLE
+            </Link>
+            <Link
               href="/about"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
+              className="text-gray-300 hover:bg-gray-800 hover:text-gray-100 px-3 py-2 rounded-md text-lg font-medium"
             >
               SOBRE
             </Link>

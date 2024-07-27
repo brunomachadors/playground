@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Page() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-800 text-white">
+    <div className="flex flex-col min-h-screen bg-gray-800 text-gray-100">
       <div className="relative w-11/12 max-w-4xl h-60 mx-auto overflow-hidden mb-6">
         <div className="absolute inset-0">
           <Image
@@ -14,7 +14,7 @@ export default function Page() {
           />
         </div>
       </div>
-      <main className="flex flex-col items-center justify-start flex-grow p-6">
+      <main className="flex flex-col items-center justify-start flex-grow p-6 bg-gray-800">
         <section className="text-center mb-16">
           <p className="text-lg max-w-4xl mx-auto">
             Esta página foi desenvolvida pela equipe do Bug Buster Mentoria com

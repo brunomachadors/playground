@@ -19,14 +19,14 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
   return (
     <div className="flex justify-center items-center bg-gray-800 w-full mt-10">
       <div className="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full border">
-        <h2 className="text-2xl font-bold mb-6 text-white text-center">
+        <h2 className="text-2xl font-bold mb-6 text-gray-100 text-center">
           Login
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label
               htmlFor="username"
-              className="block text-sm font-medium text-white"
+              className="block text-sm font-medium text-gray-100"
             >
               Usuário
             </label>
@@ -43,7 +43,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-white"
+              className="block text-sm font-medium text-gray-100"
             >
               Senha
             </label>
@@ -60,7 +60,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
           <div className="flex justify-center w-full">
             <Button
               type="submit"
-              color="white"
+              color="gray-100"
               textColor="gray-800"
               borderColor="gray-300"
               hoverColor="gray-100"
