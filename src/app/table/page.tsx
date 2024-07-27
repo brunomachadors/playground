@@ -90,16 +90,16 @@ const CharacterTable: React.FC = () => {
                         />
                       </div>
                     </td>
-                    <td className="py-2 px-4 border-b border-gray-600">
+                    <td className="py-2 px-4 border-b border-gray-600 text-gray-100">
                       {character.name}
                     </td>
-                    <td className="py-2 px-4 border-b border-gray-600">
+                    <td className="py-2 px-4 border-b border-gray-600 text-gray-100">
                       {character.house}
                     </td>
-                    <td className="py-2 px-4 border-b border-gray-600">
+                    <td className="py-2 px-4 border-b border-gray-600 text-gray-100">
                       {character.dateOfBirth || 'Unknown'}
                     </td>
-                    <td className="py-2 px-4 border-b border-gray-600">
+                    <td className="py-2 px-4 border-b border-gray-600 text-gray-100">
                       {character.actor}
                     </td>
                   </tr>
