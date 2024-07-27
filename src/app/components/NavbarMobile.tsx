@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,9 +21,8 @@ const NavbarMobile = () => {
   };
 
   if (!hasMounted) {
-    // Render a placeholder or static version of the component for server-side rendering
     return (
-      <div className="inset-y-0 left-0 flex items-center md:hidden">
+      <div className="absolute top-0 left-0 flex items-center md:hidden">
         <button
           type="button"
           className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -38,7 +38,7 @@ const NavbarMobile = () => {
 
   return (
     <>
-      <div className="inset-y-0 left-0 flex items-center md:hidden">
+      <div className="absolute top-0 left-0 flex items-center md:hidden">
         <button
           onClick={toggleMenu}
           type="button"

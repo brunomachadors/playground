@@ -4,7 +4,7 @@ import Link from 'next/link';
 const NavbarWeb = () => {
   return (
     <div className="hidden md:block">
-      <div className="ml-10 flex items-baseline space-x-4">
+      <div className="ml-10 flex items-baseline space-x-4 mt-28 pb-10">
         <Link
           href="/"
           className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"

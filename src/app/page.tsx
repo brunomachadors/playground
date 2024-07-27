@@ -18,9 +18,7 @@ export default function Page() {
         <section className="text-center mb-16">
           <p className="text-lg max-w-4xl mx-auto">
             Esta página foi desenvolvida pela equipe do Bug Buster Mentoria com
-            o intuito educativo. Aqui, você encontrará uma série de desafios
-            para scripts de automação de teste, incluindo logins, formulários e
-            outros. Esperamos que você aprenda e se divirta!
+            o intuito educativo.
           </p>
         </section>
         <section className="w-full max-w-4xl p-6 rounded-lg shadow-lg border border-gray-600 mx-auto">
