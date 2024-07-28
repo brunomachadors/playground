@@ -1,11 +1,11 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'; // Importar useRouter do Next.js
-import { LoginForm } from '../components/LoginForm';
+import { LoginForm } from '../components/LoginForm/LoginForm';
 import { USERS } from '../data/users';
-import { InstructionsLogin } from '../components/Instructions';
-import { StatusLogin } from '../components/Status';
+import { InstructionsLogin } from '../components/Instructions/Instructions';
 import { Status } from '../types/statusLogin';
+import { StatusLogin } from '../components/Status/Status';
 
 export default function LoginPage() {
   const [status, setStatus] = useState<Status>(null);
@@ -48,7 +48,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="bg-gray-800 min-h-screen flex flex-col items-center justify-start pt-2 px-4 sm:px-6 lg:px-8">
+    <div
+      className="bg-gray-800 min-h-screen flex flex-col items-center justify-start pt-2 px-4 sm:px-6 lg:px-8"
+      id="loginPage"
+    >
       <div className="w-full max-w-2xl mx-auto">
         <InstructionsLogin />
         <div className="flex justify-center">

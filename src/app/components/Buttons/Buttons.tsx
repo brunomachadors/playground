@@ -51,7 +51,7 @@ const Button: React.FC<ButtonProps> = ({
   `;
 
   return (
-    <button className={buttonClasses} {...props}>
+    <button className={buttonClasses} {...props} id="clickButton">
       {children}
     </button>
   );
