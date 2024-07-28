@@ -1,7 +1,9 @@
+// components/CharacterTable.tsx
+
 'use client';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
-import { InstructionsTable } from '../components/Instructions';
+import { InstructionsTable } from '../components/Instructions/Instructions';
 
 interface Character {
   id: string;
@@ -36,85 +38,136 @@ const CharacterTable: React.FC = () => {
     fetchCharacters();
   }, []);
 
+  // Função para criar IDs válidos
+  const generateId = (name: string) => {
+    return name.replace(/[^a-zA-Z0-9]/g, '');
+  };
+
   return (
-    <div className="min-h-screen bg-gray-800 pt-2 px-4 sm:px-6 lg:px-8">
+    <div
+      id="characterTableContainer"
+      className="min-h-screen bg-gray-800 pt-2 px-4 sm:px-6 lg:px-8"
+    >
       <InstructionsTable />
-      <div className="max-w-5xl mx-auto mt-6 mb-6">
-        <div className="block sm:hidden">
-          {characters.map((character) => (
-            <div
-              key={character.id}
-              className="bg-gray-800 text-gray-100 mb-4 p-4 rounded-lg shadow-md flex flex-col items-center border"
-            >
-              <div className="w-24 h-24 relative mb-4">
-                <Image
-                  src={character.image}
-                  alt={character.name}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-full"
-                />
+      <div id="characterList" className="max-w-5xl mx-auto mt-6 mb-6">
+        <div id="characterCardsMobile" className="block sm:hidden">
+          {characters.map((character) => {
+            const id = generateId(character.name);
+            return (
+              <div
+                key={character.id}
+                id={`characterCard-${id}`}
+                className="bg-gray-800 text-gray-100 mb-4 p-4 rounded-lg shadow-md flex flex-col items-center border"
+              >
+                <div className="w-24 h-24 relative mb-4">
+                  <Image
+                    src={character.image}
+                    alt={character.name}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-full"
+                  />
+                </div>
+                <p id={`characterName-${id}`} className="font-bold text-lg">
+                  {character.name}
+                </p>
+                <p id={`characterHouse-${id}`}>{character.house}</p>
+                <p id={`characterDateOfBirth-${id}`}>
+                  {character.dateOfBirth || 'Unknown'}
+                </p>
+                <p id={`characterActor-${id}`}>{character.actor}</p>
               </div>
-              <p className="font-bold text-lg">{character.name}</p>
-              <p>{character.house}</p>
-              <p>{character.dateOfBirth || 'Unknown'}</p>
-              <p>{character.actor}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
-        <div className="hidden sm:block">
+        <div id="characterTableDesktop" className="hidden sm:block">
           <div className="overflow-x-auto">
-            <table className="w-full bg-gray-800 border border-gray-300 text-center table-auto">
+            <table
+              id="characterTable"
+              className="w-full bg-gray-800 border border-gray-300 text-center table-auto"
+            >
               <thead>
                 <tr>
-                  <th className="py-2 px-4 border-b border-gray-600 text-gray-100">
+                  <th
+                    id="columnHeaderImage"
+                    className="py-2 px-4 border-b border-gray-600 text-gray-100"
+                  >
                     Image
                   </th>
-                  <th className="py-2 px-4 border-b border-gray-600 text-gray-100">
+                  <th
+                    id="columnHeaderName"
+                    className="py-2 px-4 border-b border-gray-600 text-gray-100"
+                  >
                     Name
                   </th>
-                  <th className="py-2 px-4 border-b border-gray-600 text-gray-100">
+                  <th
+                    id="columnHeaderHouse"
+                    className="py-2 px-4 border-b border-gray-600 text-gray-100"
+                  >
                     House
                   </th>
-                  <th className="py-2 px-4 border-b border-gray-600 text-gray-100">
+                  <th
+                    id="columnHeaderDateOfBirth"
+                    className="py-2 px-4 border-b border-gray-600 text-gray-100"
+                  >
                     Date of Birth
                   </th>
-                  <th className="py-2 px-4 border-b border-gray-600 text-gray-100">
+                  <th
+                    id="columnHeaderActor"
+                    className="py-2 px-4 border-b border-gray-600 text-gray-100"
+                  >
                     Actor
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {characters.map((character) => (
-                  <tr
-                    key={character.id}
-                    className="hover:bg-gray-600 text-gray-100"
-                  >
-                    <td className="py-2 px-4 border-b border-gray-600 text-gray-100">
-                      <div className="flex items-center justify-center w-16 h-16 relative">
-                        <Image
-                          src={character.image}
-                          alt={character.name}
-                          layout="fill"
-                          objectFit="cover"
-                          className="rounded-full"
-                        />
-                      </div>
-                    </td>
-                    <td className="py-2 px-4 border-b border-gray-600 text-gray-100">
-                      {character.name}
-                    </td>
-                    <td className="py-2 px-4 border-b border-gray-600 text-gray-100">
-                      {character.house}
-                    </td>
-                    <td className="py-2 px-4 border-b border-gray-600 text-gray-100">
-                      {character.dateOfBirth || 'Unknown'}
-                    </td>
-                    <td className="py-2 px-4 border-b border-gray-600 text-gray-100">
-                      {character.actor}
-                    </td>
-                  </tr>
-                ))}
+                {characters.map((character) => {
+                  const id = generateId(character.name);
+                  return (
+                    <tr
+                      key={character.id}
+                      id={`characterRow${id}`}
+                      className="hover:bg-gray-600 text-gray-100"
+                    >
+                      <td className="py-2 px-4 border-b border-gray-600 text-gray-100">
+                        <div className="flex items-center justify-center w-16 h-16 relative">
+                          <Image
+                            src={character.image}
+                            alt={character.name}
+                            layout="fill"
+                            objectFit="cover"
+                            className="rounded-full"
+                            id={`photo${id}`}
+                          />
+                        </div>
+                      </td>
+                      <td
+                        id={`tableCharacterName${id}`}
+                        className="py-2 px-4 border-b border-gray-600 text-gray-100"
+                      >
+                        {character.name}
+                      </td>
+                      <td
+                        id={`tableCharacterHouse${id}`}
+                        className="py-2 px-4 border-b border-gray-600 text-gray-100"
+                      >
+                        {character.house}
+                      </td>
+                      <td
+                        id={`tableCharacterDateOfBirth${id}`}
+                        className="py-2 px-4 border-b border-gray-600 text-gray-100"
+                      >
+                        {character.dateOfBirth || 'Unknown'}
+                      </td>
+                      <td
+                        id={`tableCharacterActor${id}`}
+                        className="py-2 px-4 border-b border-gray-600 text-gray-100"
+                      >
+                        {character.actor}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

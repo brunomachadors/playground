@@ -1,8 +1,7 @@
-// components/UserProfile.tsx
-
-'use client'; // Indica que este é um componente de cliente
+'use client';
 
 import React, { useState } from 'react';
+import { USERS } from '../../data/users';
 
 const UserProfile: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState(true);
@@ -12,11 +11,17 @@ const UserProfile: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-800 text-gray-200 p-6 rounded-lg shadow-md max-w-sm mx-auto">
+    <div
+      id="userProfileContainer"
+      className="bg-gray-800 text-gray-200 p-6 rounded-lg shadow-md max-w-sm mx-auto border"
+    >
       {loggedIn ? (
-        <div>
-          <p className="text-lg font-bold mb-4">Usuário Logado</p>
+        <div id="loggedInSection" className="flex flex-col items-center">
+          <p id="loggedInMessage" className="text-lg font-bold mb-4">
+            Usuário {USERS.regular.login} logado
+          </p>
           <button
+            id="logoutButton"
             onClick={handleLogout}
             className="w-full bg-red-600 text-gray-100 py-2 px-4 rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
           >
@@ -24,7 +29,7 @@ const UserProfile: React.FC = () => {
           </button>
         </div>
       ) : (
-        <p className="text-center">
+        <p id="loggedOutMessage" className="text-center">
           Você foi desconectado. Por favor, faça login.
         </p>
       )}

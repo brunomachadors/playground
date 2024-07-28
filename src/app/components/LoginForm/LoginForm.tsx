@@ -1,7 +1,7 @@
 'use client'; // Indica que é um componente do cliente
 
 import React, { useState } from 'react';
-import Button from './Buttons';
+import Button from '../Buttons/Buttons';
 
 type LoginFormProps = {
   onSubmit: (username: string, password: string) => void;
@@ -17,9 +17,18 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <div className="flex justify-center items-center bg-gray-800 w-full mt-10">
-      <div className="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full border">
-        <h2 className="text-2xl font-bold mb-6 text-gray-100 text-center">
+    <div
+      id="loginContainer"
+      className="flex justify-center items-center bg-gray-800 w-full mt-10"
+    >
+      <div
+        id="loginBox"
+        className="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full border"
+      >
+        <h2
+          id="loginTitle"
+          className="text-2xl font-bold mb-6 text-gray-100 text-center"
+        >
           Login
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -31,7 +40,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
               Usuário
             </label>
             <input
-              id="username"
+              id="usernameInput"
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value.toLowerCase())}
@@ -48,7 +57,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
               Senha
             </label>
             <input
-              id="password"
+              id="passwordInput"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -59,6 +68,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
           </div>
           <div className="flex justify-center w-full">
             <Button
+              id="submitButton"
               type="submit"
               color="gray-100"
               textColor="gray-800"
