@@ -8,6 +8,27 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Playground page',
   description: 'Página gerada para testes de automação',
+  openGraph: {
+    title: 'Playground page',
+    description: 'Página gerada para testes de automação',
+    images: [
+      {
+        url: 'https://res.cloudinary.com/dtglidvcw/image/upload/v1721943129/BUGBUSTER/smsccp4wsl8o6v4tmmfb.jpg',
+        width: 800,
+        height: 600,
+        alt: 'Banner de pré-visualização',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Playground page',
+    description: 'Página gerada para testes de automação',
+    images: [
+      'https://res.cloudinary.com/dtglidvcw/image/upload/v1721943129/BUGBUSTER/smsccp4wsl8o6v4tmmfb.jpg',
+    ],
+  },
+  viewport: 'width=device-width, initial-scale=1.0',
 };
 
 export default function RootLayout({
@@ -16,7 +37,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body
         className={`${inter.className} flex flex-col min-h-screen font-mono bg-gray-800`}
       >
