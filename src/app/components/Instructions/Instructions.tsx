@@ -83,3 +83,32 @@ export function InstructionsTable() {
     </div>
   );
 }
+
+export function InstructionsTasks() {
+  return (
+    <div
+      id="instructionsToDo"
+      className="bg-gray-800 p-6 max-w-2xl mx-auto text-gray-100 rounded-3xl mb-6"
+    >
+      <p
+        id="instructionsToDoHeader"
+        className="text-center mb-6 font-bold text-l"
+      >
+        Instruções das Tarefas
+      </p>
+      <ul id="instructionsToDoList" className="list-disc list-inside mb-6">
+        <li id="instructionsToDoItem1">
+          Adicione uma tarefa no campo de input e clique em &quot;Adicionar
+          Tarefa&quot;.
+        </li>
+        <li id="instructionsToDoItem2">
+          A tarefa será listada abaixo na seção &quot;Tarefas para fazer&quot;.
+        </li>
+        <li id="instructionsToDoItem3">
+          Clique no botão &quot;Completar&quot; ao lado da tarefa para movê-la
+          para a seção de tarefas completas.
+        </li>
+      </ul>
+    </div>
+  );
+}
