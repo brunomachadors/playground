@@ -1,4 +1,4 @@
-'use client'; // Indica que é um componente do cliente
+'use client';
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -23,9 +23,7 @@ function Form() {
     gender: '',
   });
 
-  const [formSubmitted, setFormSubmitted] = useState(false);
-
-  const router = useRouter(); // Inicializa useRouter
+  const router = useRouter();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -86,6 +84,7 @@ function Form() {
       router.push('/submittedform');
     }
   };
+
   return (
     <div
       id="formContainer"
@@ -98,6 +97,7 @@ function Form() {
         >
           Cadastro
         </h2>
+        {/* Nome */}
         <div>
           <label
             htmlFor="name"
@@ -120,6 +120,8 @@ function Form() {
             </p>
           )}
         </div>
+
+        {/* Email */}
         <div>
           <label
             htmlFor="email"
@@ -142,6 +144,8 @@ function Form() {
             </p>
           )}
         </div>
+
+        {/* Senha */}
         <div>
           <label
             htmlFor="password"
@@ -164,6 +168,8 @@ function Form() {
             </p>
           )}
         </div>
+
+        {/* País */}
         <div>
           <label
             htmlFor="country"
@@ -179,11 +185,11 @@ function Form() {
             onChange={handleChange}
           >
             <option value="">Selecione um país</option>
-            <option value="mexico">Brasil</option>
+            <option value="brazil">Brasil</option>
             <option value="canada">Canadá</option>
             <option value="usa">Estados Unidos</option>
             <option value="mexico">México</option>
-            <option value="mexico">Portugal</option>
+            <option value="portugal">Portugal</option>
           </select>
           {errors.country && (
             <p id="countryError" className="text-red-400 text-sm">
@@ -191,6 +197,8 @@ function Form() {
             </p>
           )}
         </div>
+
+        {/* Gênero */}
         <div>
           <label className="block text-sm font-medium text-gray-100">
             Gênero <span className="text-gray-100">*</span>
@@ -199,7 +207,6 @@ function Form() {
             <label className="inline-flex items-center">
               <input
                 type="radio"
-                id="genderMale"
                 name="gender"
                 value="male"
                 className="form-radio"
@@ -211,7 +218,6 @@ function Form() {
             <label className="inline-flex items-center ml-6">
               <input
                 type="radio"
-                id="genderFemale"
                 name="gender"
                 value="female"
                 className="form-radio"
@@ -223,7 +229,6 @@ function Form() {
             <label className="inline-flex items-center ml-6">
               <input
                 type="radio"
-                id="genderOther"
                 name="gender"
                 value="other"
                 className="form-radio"
@@ -239,6 +244,8 @@ function Form() {
             </p>
           )}
         </div>
+
+        {/* Hobbies */}
         <div>
           <label className="block text-sm font-medium text-gray-100">
             Lazer
@@ -247,7 +254,6 @@ function Form() {
             <label className="inline-flex items-center">
               <input
                 type="checkbox"
-                id="hobbyReading"
                 name="hobbies"
                 value="reading"
                 className="form-checkbox"
@@ -259,7 +265,6 @@ function Form() {
             <label className="inline-flex items-center ml-6">
               <input
                 type="checkbox"
-                id="hobbyTravelling"
                 name="hobbies"
                 value="travelling"
                 className="form-checkbox"
@@ -271,7 +276,6 @@ function Form() {
             <label className="inline-flex items-center ml-6">
               <input
                 type="checkbox"
-                id="hobbyGaming"
                 name="hobbies"
                 value="gaming"
                 className="form-checkbox"
@@ -280,22 +284,45 @@ function Form() {
               />
               <span className="ml-2">Video Games</span>
             </label>
+            <label className="inline-flex items-center ml-6">
+              <input
+                type="checkbox"
+                name="hobbies"
+                value="singing"
+                className="form-checkbox"
+                onChange={handleChange}
+                checked={formData.hobbies.includes('singing')}
+              />
+              <span className="ml-2">Cantar</span>
+            </label>
+            <label className="inline-flex items-center ml-6">
+              <input
+                type="checkbox"
+                name="hobbies"
+                value="watching_tv"
+                className="form-checkbox"
+                onChange={handleChange}
+                checked={formData.hobbies.includes('watching_tv')}
+              />
+              <span className="ml-2">Assistir TV</span>
+            </label>
+
+            <label className="inline-flex items-center ml-6">
+              <input
+                type="checkbox"
+                name="hobbies"
+                value="sports"
+                className="form-checkbox"
+                onChange={handleChange}
+                checked={formData.hobbies.includes('sports')}
+              />
+              <span className="ml-2">Esportes</span>
+            </label>
           </div>
         </div>
-        <div>
-          <div className="flex justify-center w-full">
-            <Button
-              type="submit"
-              id="submitButton"
-              color="gray-100"
-              textColor="gray-800"
-              borderColor="gray-300"
-              hoverColor="gray-100"
-              focusColor="gray-500"
-            >
-              Enviar
-            </Button>
-          </div>
+
+        <div className="flex justify-center">
+          <Button type="submit" title="Cadastrar" />
         </div>
       </form>
     </div>
