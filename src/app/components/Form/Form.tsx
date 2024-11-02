@@ -322,10 +322,11 @@ function Form() {
             </label>
           </div>
         </div>
-
-        <Button type="submit" id="submitBtn">
-          Enviar
-        </Button>
+        <div className="flex justify-center w-full">
+          <Button type="submit" id="submitBtn">
+            Enviar
+          </Button>
+        </div>
       </form>
     </div>
   );
