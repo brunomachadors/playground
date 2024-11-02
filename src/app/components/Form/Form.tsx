@@ -313,25 +313,17 @@ function Form() {
               <input
                 type="checkbox"
                 name="hobbies"
-                value="others"
+                value="sing"
                 className="form-checkbox"
                 onChange={handleChange}
-                checked={formData.hobbies.includes('others')}
+                checked={formData.hobbies.includes('sing')}
               />
-              <span className="ml-2">Outro</span>
+              <span className="ml-2">Cantar</span>
             </label>
           </div>
         </div>
 
-        <Button
-          type="submit"
-          color="indigo"
-          textColor="gray-100"
-          borderColor="indigo-600"
-          hoverColor="indigo-700"
-          focusColor="indigo-500"
-          id="submitBtn"
-        >
+        <Button type="submit" id="submitBtn">
           Enviar
         </Button>
       </form>
