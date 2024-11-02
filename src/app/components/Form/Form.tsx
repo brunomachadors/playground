@@ -28,9 +28,7 @@ function Form() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    const { name, value, type } = e.target as
-      | HTMLInputElement
-      | HTMLSelectElement;
+    const { name, value, type } = e.target;
 
     if (type === 'checkbox') {
       const hobbies = formData.hobbies.includes(value)
@@ -97,6 +95,7 @@ function Form() {
         >
           Cadastro
         </h2>
+
         {/* Nome */}
         <div>
           <label
@@ -250,7 +249,10 @@ function Form() {
           <label className="block text-sm font-medium text-gray-100">
             Lazer
           </label>
-          <div id="hobbiesGroup" className="mt-1 text-gray-100">
+          <div
+            id="hobbiesGroup"
+            className="mt-1 grid grid-cols-2 gap-4 text-gray-100"
+          >
             <label className="inline-flex items-center">
               <input
                 type="checkbox"
@@ -262,7 +264,7 @@ function Form() {
               />
               <span className="ml-2">Ler</span>
             </label>
-            <label className="inline-flex items-center ml-6">
+            <label className="inline-flex items-center">
               <input
                 type="checkbox"
                 name="hobbies"
@@ -273,7 +275,7 @@ function Form() {
               />
               <span className="ml-2">Viajar</span>
             </label>
-            <label className="inline-flex items-center ml-6">
+            <label className="inline-flex items-center">
               <input
                 type="checkbox"
                 name="hobbies"
@@ -282,32 +284,9 @@ function Form() {
                 onChange={handleChange}
                 checked={formData.hobbies.includes('gaming')}
               />
-              <span className="ml-2">Video Games</span>
+              <span className="ml-2">Jogos</span>
             </label>
-            <label className="inline-flex items-center ml-6">
-              <input
-                type="checkbox"
-                name="hobbies"
-                value="singing"
-                className="form-checkbox"
-                onChange={handleChange}
-                checked={formData.hobbies.includes('singing')}
-              />
-              <span className="ml-2">Cantar</span>
-            </label>
-            <label className="inline-flex items-center ml-6">
-              <input
-                type="checkbox"
-                name="hobbies"
-                value="watching_tv"
-                className="form-checkbox"
-                onChange={handleChange}
-                checked={formData.hobbies.includes('watching_tv')}
-              />
-              <span className="ml-2">Assistir TV</span>
-            </label>
-
-            <label className="inline-flex items-center ml-6">
+            <label className="inline-flex items-center">
               <input
                 type="checkbox"
                 name="hobbies"
@@ -318,12 +297,43 @@ function Form() {
               />
               <span className="ml-2">Esportes</span>
             </label>
+
+            <label className="inline-flex items-center">
+              <input
+                type="checkbox"
+                name="hobbies"
+                value="television"
+                className="form-checkbox"
+                onChange={handleChange}
+                checked={formData.hobbies.includes('television')}
+              />
+              <span className="ml-2">Televisão</span>
+            </label>
+            <label className="inline-flex items-center">
+              <input
+                type="checkbox"
+                name="hobbies"
+                value="others"
+                className="form-checkbox"
+                onChange={handleChange}
+                checked={formData.hobbies.includes('others')}
+              />
+              <span className="ml-2">Outro</span>
+            </label>
           </div>
         </div>
 
-        <div className="flex justify-center">
-          <Button type="submit" title="Cadastrar" />
-        </div>
+        <Button
+          type="submit"
+          color="indigo"
+          textColor="gray-100"
+          borderColor="indigo-600"
+          hoverColor="indigo-700"
+          focusColor="indigo-500"
+          id="submitBtn"
+        >
+          Enviar
+        </Button>
       </form>
     </div>
   );
