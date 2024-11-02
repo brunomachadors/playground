@@ -179,9 +179,11 @@ function Form() {
             onChange={handleChange}
           >
             <option value="">Selecione um país</option>
-            <option value="usa">Estados Unidos</option>
+            <option value="mexico">Brasil</option>
             <option value="canada">Canadá</option>
+            <option value="usa">Estados Unidos</option>
             <option value="mexico">México</option>
+            <option value="mexico">Portugal</option>
           </select>
           {errors.country && (
             <p id="countryError" className="text-red-400 text-sm">
