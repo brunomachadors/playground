@@ -1,10 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useProductContext } from './ProductContext';
 
-export default function PaymentPage() {
+export default function PaymentPage({
+  goToOrders,
+}: {
+  goToOrders: () => void;
+}) {
   const { cart, completePurchase } = useProductContext();
+  const [paymentMethod, setPaymentMethod] = useState('');
 
   const totalAmount = cart.reduce(
     (total, item) => total + item.price * item.cartQuantity,
@@ -12,7 +17,12 @@ export default function PaymentPage() {
   );
 
   const handlePayment = () => {
-    completePurchase();
+    if (!paymentMethod) {
+      alert('Por favor, selecione uma forma de pagamento!');
+      return;
+    }
+    completePurchase(paymentMethod); // Registra a forma de pagamento
+    goToOrders(); // Redireciona para as ordens
   };
 
   return (
@@ -47,13 +57,37 @@ export default function PaymentPage() {
             <p className="text-xl text-center font-semibold">
               Total: €{totalAmount.toFixed(2)}
             </p>
-            <button
-              onClick={handlePayment}
-              className="w-full mt-4 py-3 rounded-lg bg-indigo-600 text-gray-100 font-semibold hover:bg-indigo-700 transition"
-            >
-              Confirmar Pagamento
-            </button>
           </div>
+
+          <div className="mt-6 space-y-4">
+            <label className="block text-gray-300">Forma de Pagamento:</label>
+            <div className="flex flex-col space-y-2">
+              {['MBWay', 'Klarna', 'Multibanco', 'PayPal', 'Visa'].map(
+                (method) => (
+                  <div key={method} className="flex items-center">
+                    <input
+                      type="radio"
+                      id={method}
+                      value={method}
+                      checked={paymentMethod === method}
+                      onChange={(e) => setPaymentMethod(e.target.value)}
+                      className="w-5 h-5 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <label htmlFor={method} className="ml-2 text-gray-100">
+                      {method}
+                    </label>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+
+          <button
+            onClick={handlePayment}
+            className="w-full mt-6 py-3 rounded-lg bg-indigo-600 text-gray-100 font-semibold hover:bg-indigo-700 transition"
+          >
+            Confirmar Pagamento
+          </button>
         </>
       )}
     </div>

@@ -13,6 +13,16 @@ import OrdersPage from '../components/Shop/OrdersPage';
 export default function Store() {
   const [activeTab, setActiveTab] = useState('Home');
 
+  // Função para navegar para a aba de Pagamento
+  const goToPayment = () => {
+    setActiveTab('Pagamento');
+  };
+
+  // Função para navegar para a aba de Ordens
+  const goToOrders = () => {
+    setActiveTab('Ordens');
+  };
+
   const renderContent = () => {
     switch (activeTab) {
       case 'Home':
@@ -22,9 +32,9 @@ export default function Store() {
       case 'Catalogo':
         return <CatalogPage />;
       case 'Carrinho':
-        return <CartPage />;
+        return <CartPage goToPayment={goToPayment} />;
       case 'Pagamento':
-        return <PaymentPage />;
+        return <PaymentPage goToOrders={goToOrders} />;
       case 'Ordens':
         return <OrdersPage />;
       default:

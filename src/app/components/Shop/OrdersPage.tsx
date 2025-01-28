@@ -21,7 +21,10 @@ export default function OrdersPage() {
               key={index}
               className="bg-gray-700 p-4 rounded-lg border border-gray-100"
             >
-              <p className="text-lg font-semibold mb-4">Data: {order.date}</p>
+              <p className="text-lg font-semibold mb-2">Data: {order.date}</p>
+              <p className="text-gray-300 mb-4">
+                Forma de Pagamento: {order.paymentMethod}
+              </p>
               <ul className="space-y-2">
                 {order.items.map((item, itemIndex) => (
                   <li

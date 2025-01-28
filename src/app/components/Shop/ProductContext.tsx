@@ -19,17 +19,18 @@ interface Order {
   items: CartItem[];
   total: number;
   date: string;
+  paymentMethod: string;
 }
 
 // Tipo para o contexto
 interface ProductContextType {
   products: Product[];
   cart: CartItem[];
-  orders: Order[]; // Adicionando suporte para ordens
+  orders: Order[];
   addProduct: (product: Product) => void;
   updateProduct: (productName: string, newQuantity: number) => void;
   addToCart: (productName: string) => void;
-  completePurchase: () => void; // Função para concluir a compra
+  completePurchase: (paymentMethod: string) => void;
 }
 
 // Criando o contexto
@@ -55,14 +56,14 @@ export const ProductProvider = ({ children }: { children: ReactNode }) => {
   ]);
 
   const [cart, setCart] = useState<CartItem[]>([]);
-  const [orders, setOrders] = useState<Order[]>([]); // Adicionando estado para ordens
+  const [orders, setOrders] = useState<Order[]>([]);
 
   // Adicionar um novo produto ao estoque
   const addProduct = (product: Product) => {
     setProducts((prev) => [...prev, product]);
   };
 
-  // Atualizar a quantidade de um produto existente no estoque
+  // Atualizar a quantidade de um produto no estoque
   const updateProduct = (productName: string, newQuantity: number) => {
     setProducts((prevProducts) =>
       prevProducts.map((product) =>
@@ -73,7 +74,7 @@ export const ProductProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
-  // Adicionar produto ao carrinho e reduzir do estoque
+  // Adicionar produto ao carrinho
   const addToCart = (productName: string) => {
     setProducts((prevProducts) =>
       prevProducts.map((product) =>
@@ -101,8 +102,8 @@ export const ProductProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
-  // Concluir a compra e limpar o carrinho
-  const completePurchase = () => {
+  // Concluir a compra
+  const completePurchase = (paymentMethod: string) => {
     if (cart.length === 0) return;
 
     // Calcula o total da compra
@@ -116,9 +117,10 @@ export const ProductProvider = ({ children }: { children: ReactNode }) => {
       items: [...cart],
       total,
       date: new Date().toLocaleString(),
+      paymentMethod,
     };
 
-    // Adiciona a nova ordem e limpa o carrinho
+    // Atualiza o estado de ordens e limpa o carrinho
     setOrders((prevOrders) => [...prevOrders, newOrder]);
     setCart([]);
   };
