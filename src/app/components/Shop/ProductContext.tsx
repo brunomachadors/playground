@@ -50,9 +50,15 @@ export const useProductContext = () => {
 // Provider para encapsular os componentes
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<Product[]>([
-    { name: 'Camiseta', price: 19.99, quantity: 10 },
-    { name: 'Calça Jeans', price: 79.99, quantity: 5 },
-    { name: 'Tênis', price: 129.99, quantity: 8 },
+    { name: 'Smartphone', price: 699.99, quantity: 10 },
+    { name: 'Fone de Ouvido Bluetooth', price: 129.99, quantity: 15 },
+    { name: 'Notebook', price: 1499.99, quantity: 5 },
+    { name: 'Tablet', price: 499.99, quantity: 7 },
+    { name: 'Smartwatch', price: 199.99, quantity: 12 },
+    { name: 'Monitor 4K', price: 349.99, quantity: 6 },
+    { name: 'Teclado Mecânico', price: 89.99, quantity: 20 },
+    { name: 'Mouse Gamer', price: 59.99, quantity: 25 },
+    { name: 'Caixa de Som Bluetooth', price: 79.99, quantity: 10 },
   ]);
 
   const [cart, setCart] = useState<CartItem[]>([]);

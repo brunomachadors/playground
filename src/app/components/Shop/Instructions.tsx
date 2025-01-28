@@ -34,8 +34,8 @@ export default function Instructions() {
           <div>
             <h3 className="text-2xl font-semibold text-gray-100 mb-2">Loja</h3>
             <p className="text-gray-300">
-              Explore os produtos disponíveis e visualize os detalhes antes de
-              adicioná-los ao carrinho.
+              Explore os produtos disponíveis, veja os detalhes e adicione-os ao
+              seu carrinho para compra.
             </p>
           </div>
         </div>
@@ -48,8 +48,8 @@ export default function Instructions() {
               Carrinho
             </h3>
             <p className="text-gray-300">
-              Visualize, atualize ou remova itens do seu carrinho antes de
-              prosseguir para o pagamento.
+              Visualize os itens adicionados, atualize suas quantidades ou
+              remova-os. Quando estiver pronto, siga para o pagamento.
             </p>
           </div>
         </div>
@@ -62,7 +62,8 @@ export default function Instructions() {
               Catálogo
             </h3>
             <p className="text-gray-300">
-              Consulte todos os produtos disponíveis em nossa loja.
+              Consulte todos os produtos disponíveis em nossa loja e adicione-os
+              ao seu carrinho.
             </p>
           </div>
         </div>
@@ -76,6 +77,7 @@ export default function Instructions() {
             </h3>
             <p className="text-gray-300">
               Finalize sua compra escolhendo o método de pagamento preferido.
+              Você verá um resumo dos itens no carrinho antes de concluir.
             </p>
           </div>
         </div>
@@ -88,8 +90,8 @@ export default function Instructions() {
               Cadastro de Produto
             </h3>
             <p className="text-gray-300">
-              Adicione novos produtos, incluindo nome, preço e quantidade em
-              estoque.
+              Adicione novos produtos diretamente na aba de Estoque, definindo
+              nome, preço e quantidade inicial.
             </p>
           </div>
         </div>
@@ -103,6 +105,8 @@ export default function Instructions() {
             </h3>
             <p className="text-gray-300">
               Ajuste as quantidades de produtos disponíveis no estoque da loja.
+              Use os controles para adicionar ou reduzir unidades conforme
+              necessário.
             </p>
           </div>
         </div>

@@ -90,35 +90,41 @@ export default function StockManagement() {
           {products.map((product, index) => (
             <li
               key={index}
-              className="flex justify-between items-center bg-gray-700 p-4 rounded-lg border border-gray-100"
+              className="flex flex-col sm:flex-row justify-between items-center bg-gray-700 p-4 rounded-lg border border-gray-100"
             >
-              <div>
-                <span className="block font-semibold text-lg">
+              {/* Informações do Produto */}
+              <div className="w-full sm:w-auto text-center sm:text-left">
+                <span className="block font-semibold text-lg text-gray-100">
                   {product.name}
                 </span>
                 <span className="block text-gray-300">
-                  €{product.price.toFixed(2)}
+                  Preço: €{product.price.toFixed(2)}
                 </span>
               </div>
-              <div className="flex flex-col items-center">
-                <span className="text-2xl font-bold text-indigo-400">
-                  {product.quantity}
-                </span>
-                <span className="text-sm text-gray-400">unidades</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <button
-                  onClick={() => handleAdjustQuantity(product.name, -1)}
-                  className="px-4 py-2 bg-red-600 text-gray-100 rounded-lg hover:bg-red-700 transition"
-                >
-                  -
-                </button>
-                <button
-                  onClick={() => handleAdjustQuantity(product.name, 1)}
-                  className="px-4 py-2 bg-green-600 text-gray-100 rounded-lg hover:bg-green-700 transition"
-                >
-                  +
-                </button>
+
+              {/* Quantidade e Botões */}
+              <div className="flex items-center mt-4 sm:mt-0 space-x-4">
+                {/* Quantidade */}
+                <div className="flex items-center space-x-2">
+                  <button
+                    onClick={() => handleAdjustQuantity(product.name, -1)}
+                    className="px-4 py-2 bg-red-600 text-gray-100 rounded-lg hover:bg-red-700 transition"
+                  >
+                    -
+                  </button>
+                  <span
+                    className="text-2xl font-bold text-gray-100 text-center"
+                    style={{ minWidth: '2rem' }} // Define uma largura mínima fixa
+                  >
+                    {product.quantity}
+                  </span>
+                  <button
+                    onClick={() => handleAdjustQuantity(product.name, 1)}
+                    className="px-4 py-2 bg-green-600 text-gray-100 rounded-lg hover:bg-green-700 transition"
+                  >
+                    +
+                  </button>
+                </div>
               </div>
             </li>
           ))}

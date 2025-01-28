@@ -59,26 +59,31 @@ export default function PaymentPage({
             </p>
           </div>
 
-          <div className="mt-6 space-y-4">
-            <label className="block text-gray-300">Forma de Pagamento:</label>
-            <div className="flex flex-col space-y-2">
-              {['MBWay', 'Klarna', 'Multibanco', 'PayPal', 'Visa'].map(
-                (method) => (
-                  <div key={method} className="flex items-center">
-                    <input
-                      type="radio"
-                      id={method}
-                      value={method}
-                      checked={paymentMethod === method}
-                      onChange={(e) => setPaymentMethod(e.target.value)}
-                      className="w-5 h-5 text-indigo-600 focus:ring-indigo-500"
-                    />
-                    <label htmlFor={method} className="ml-2 text-gray-100">
-                      {method}
-                    </label>
-                  </div>
-                )
-              )}
+          <div className="mt-6 space-y-4 text-center">
+            <label className="block text-gray-300 text-lg font-semibold">
+              Forma de Pagamento:
+            </label>
+            <div className="inline-block text-left">
+              {/* Alinha os bullet points à esquerda */}
+              <div className="flex flex-col space-y-2">
+                {['MBWay', 'Klarna', 'Multibanco', 'PayPal', 'Visa'].map(
+                  (method) => (
+                    <div key={method} className="flex items-center">
+                      <input
+                        type="radio"
+                        id={method}
+                        value={method}
+                        checked={paymentMethod === method}
+                        onChange={(e) => setPaymentMethod(e.target.value)}
+                        className="w-5 h-5 text-indigo-600 focus:ring-indigo-500"
+                      />
+                      <label htmlFor={method} className="ml-2 text-gray-100">
+                        {method}
+                      </label>
+                    </div>
+                  )
+                )}
+              </div>
             </div>
           </div>
 
