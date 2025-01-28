@@ -52,7 +52,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow bg-gray-800 pt-2">{children}</main>
         <footer className="py-4 bg-gray-900 w-full text-center mt-auto text-gray-100">
-          <p>&copy; 2024 Bug Buster Mentoria.</p>
+          <p>&copy; 2025 Bug Buster Mentoria.</p>
         </footer>
       </body>
     </html>
