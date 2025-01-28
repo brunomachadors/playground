@@ -50,15 +50,18 @@ export const useProductContext = () => {
 // Provider para encapsular os componentes
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<Product[]>([
-    { name: 'Smartphone', price: 699.99, quantity: 10 },
-    { name: 'Fone de Ouvido Bluetooth', price: 129.99, quantity: 15 },
-    { name: 'Notebook', price: 1499.99, quantity: 5 },
-    { name: 'Tablet', price: 499.99, quantity: 7 },
-    { name: 'Smartwatch', price: 199.99, quantity: 12 },
-    { name: 'Monitor 4K', price: 349.99, quantity: 6 },
-    { name: 'Teclado Mecânico', price: 89.99, quantity: 20 },
-    { name: 'Mouse Gamer', price: 59.99, quantity: 25 },
-    { name: 'Caixa de Som Bluetooth', price: 79.99, quantity: 10 },
+    { name: 'Lightsaber (Star Wars)', price: 9999.99, quantity: 2 },
+    { name: 'Pato de Borracha Gigante', price: 49.99, quantity: 15 },
+    { name: 'Repelente para Tubarões', price: 299.99, quantity: 5 },
+    {
+      name: 'Capacete de Alumínio para Proteção Contra Controle Mental Alienígena',
+      price: 19.99,
+      quantity: 50,
+    },
+    { name: 'Chave de Fenda Sônica (Doctor Who)', price: 79.99, quantity: 7 },
+    { name: 'Vela com Cheiro de Bacon', price: 14.99, quantity: 20 },
+    { name: 'Caneta Invisível', price: 9.99, quantity: 0 },
+    { name: 'Óculos para Cães', price: 24.99, quantity: 12 },
   ]);
 
   const [cart, setCart] = useState<CartItem[]>([]);
