@@ -19,7 +19,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, index, completeTask }) => {
         onClick={() => completeTask(index)}
         className="bg-gray-200 text-gray-800 font-bold py-1 px-2 rounded-md hover:bg-gray-400 absolute right-2 top-1/2 transform -translate-y-1/2"
       >
-        Completar
+        Complete
       </button>
     </li>
   );

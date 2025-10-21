@@ -37,7 +37,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
               htmlFor="username"
               className="block text-sm font-medium text-gray-100"
             >
-              Usuário
+              Username
             </label>
             <input
               id="usernameInput"
@@ -45,7 +45,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
               value={username}
               onChange={(e) => setUsername(e.target.value.toLowerCase())}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
-              placeholder="Digite seu usuário"
+              placeholder="Type your username"
               required
             />
           </div>
@@ -54,7 +54,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
               htmlFor="password"
               className="block text-sm font-medium text-gray-100"
             >
-              Senha
+              Password
             </label>
             <input
               id="passwordInput"
@@ -62,7 +62,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
-              placeholder="Digite sua senha"
+              placeholder="Type your password"
               required
             />
           </div>
@@ -76,7 +76,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
               hoverColor="gray-200"
               focusColor="gray-500"
             >
-              Logar
+              Login
             </Button>
           </div>
         </form>

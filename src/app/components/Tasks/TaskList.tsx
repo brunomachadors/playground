@@ -9,7 +9,7 @@ interface TaskListProps {
 const TaskList: React.FC<TaskListProps> = ({ tasks, completeTask }) => {
   return (
     <div className="mb-12">
-      <h2 className="text-xl font-bold mb-4 text-center">Tarefas para fazer</h2>
+      <h2 className="text-xl font-bold mb-4 text-center">To do list</h2>
       <ul id="taskList" className="space-y-2 relative">
         {tasks.map((task, index) => (
           <TaskItem

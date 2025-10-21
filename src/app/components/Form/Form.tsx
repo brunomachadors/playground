@@ -93,16 +93,16 @@ function Form() {
           id="formHeader"
           className="text-2xl font-bold mb-6 text-gray-100 text-center"
         >
-          Cadastro
+          Form
         </h2>
 
-        {/* Nome */}
+        {/* Name */}
         <div>
           <label
             htmlFor="name"
             className="block text-sm font-medium text-gray-100"
           >
-            Nome <span className="text-gray-100">*</span>
+            Name <span className="text-gray-100">*</span>
           </label>
           <input
             type="text"
@@ -111,7 +111,7 @@ function Form() {
             className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 bg-gray-100"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Digite seu nome"
+            placeholder="Type your name"
           />
           {errors.name && (
             <p id="nameError" className="text-red-400 text-sm">
@@ -135,7 +135,7 @@ function Form() {
             className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 bg-gray-100"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Digite seu e-mail"
+            placeholder="Type your e-mail"
           />
           {errors.email && (
             <p id="emailError" className="text-red-400 text-sm">
@@ -150,7 +150,7 @@ function Form() {
             htmlFor="password"
             className="block text-sm font-medium text-gray-100"
           >
-            Senha <span className="text-gray-100">*</span>
+            Password <span className="text-gray-100">*</span>
           </label>
           <input
             type="password"
@@ -159,7 +159,7 @@ function Form() {
             className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 bg-gray-100"
             value={formData.password}
             onChange={handleChange}
-            placeholder="Digite sua senha"
+            placeholder="Type your password"
           />
           {errors.password && (
             <p id="passwordError" className="text-red-400 text-sm">
@@ -174,7 +174,7 @@ function Form() {
             htmlFor="country"
             className="block text-sm font-medium text-gray-100"
           >
-            País <span className="text-gray-100">*</span>
+            Country <span className="text-gray-100">*</span>
           </label>
           <select
             id="country"
@@ -183,11 +183,11 @@ function Form() {
             value={formData.country}
             onChange={handleChange}
           >
-            <option value="">Selecione um país</option>
-            <option value="brazil">Brasil</option>
-            <option value="canada">Canadá</option>
-            <option value="usa">Estados Unidos</option>
-            <option value="mexico">México</option>
+            <option value="">Select country</option>
+            <option value="brazil">Brazil</option>
+            <option value="canada">Canada</option>
+            <option value="usa">United States of America</option>
+            <option value="mexico">Mexico</option>
             <option value="portugal">Portugal</option>
           </select>
           {errors.country && (
@@ -200,7 +200,7 @@ function Form() {
         {/* Gênero */}
         <div>
           <label className="block text-sm font-medium text-gray-100">
-            Gênero <span className="text-gray-100">*</span>
+            Gender <span className="text-gray-100">*</span>
           </label>
           <div id="genderGroup" className="mt-1 text-gray-100">
             <label className="inline-flex items-center">
@@ -212,7 +212,7 @@ function Form() {
                 onChange={handleChange}
                 checked={formData.gender === 'male'}
               />
-              <span className="ml-2">Masculino</span>
+              <span className="ml-2">Male</span>
             </label>
             <label className="inline-flex items-center ml-6">
               <input
@@ -223,7 +223,7 @@ function Form() {
                 onChange={handleChange}
                 checked={formData.gender === 'female'}
               />
-              <span className="ml-2">Feminino</span>
+              <span className="ml-2">Female</span>
             </label>
             <label className="inline-flex items-center ml-6">
               <input
@@ -234,7 +234,7 @@ function Form() {
                 onChange={handleChange}
                 checked={formData.gender === 'other'}
               />
-              <span className="ml-2">Outro</span>
+              <span className="ml-2">Other</span>
             </label>
           </div>
           {errors.gender && (
@@ -247,7 +247,7 @@ function Form() {
         {/* Hobbies */}
         <div>
           <label className="block text-sm font-medium text-gray-100">
-            Lazer
+            Hobbies
           </label>
           <div
             id="hobbiesGroup"
@@ -262,7 +262,7 @@ function Form() {
                 onChange={handleChange}
                 checked={formData.hobbies.includes('reading')}
               />
-              <span className="ml-2">Ler</span>
+              <span className="ml-2">Read</span>
             </label>
             <label className="inline-flex items-center">
               <input
@@ -273,7 +273,7 @@ function Form() {
                 onChange={handleChange}
                 checked={formData.hobbies.includes('travelling')}
               />
-              <span className="ml-2">Viajar</span>
+              <span className="ml-2">Travel</span>
             </label>
             <label className="inline-flex items-center">
               <input
@@ -284,7 +284,7 @@ function Form() {
                 onChange={handleChange}
                 checked={formData.hobbies.includes('gaming')}
               />
-              <span className="ml-2">Jogos</span>
+              <span className="ml-2">Video Games</span>
             </label>
             <label className="inline-flex items-center">
               <input
@@ -295,7 +295,7 @@ function Form() {
                 onChange={handleChange}
                 checked={formData.hobbies.includes('sports')}
               />
-              <span className="ml-2">Esportes</span>
+              <span className="ml-2">Television</span>
             </label>
 
             <label className="inline-flex items-center">
@@ -307,7 +307,7 @@ function Form() {
                 onChange={handleChange}
                 checked={formData.hobbies.includes('television')}
               />
-              <span className="ml-2">Televisão</span>
+              <span className="ml-2">TV Shows</span>
             </label>
             <label className="inline-flex items-center">
               <input
@@ -318,13 +318,13 @@ function Form() {
                 onChange={handleChange}
                 checked={formData.hobbies.includes('sing')}
               />
-              <span className="ml-2">Cantar</span>
+              <span className="ml-2">Sing</span>
             </label>
           </div>
         </div>
         <div className="flex justify-center w-full">
           <Button type="submit" id="submitBtn">
-            Enviar
+            Send
           </Button>
         </div>
       </form>

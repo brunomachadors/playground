@@ -6,14 +6,7 @@ interface MenuProps {
 }
 
 function Menu({ activeTab, setActiveTab }: MenuProps) {
-  const tabs = [
-    'Home',
-    'Estoque',
-    'Catalogo',
-    'Carrinho',
-    'Pagamento',
-    'Ordens',
-  ];
+  const tabs = ['Home', 'Inventory', 'Catalog', 'Cart', 'Payments', 'Orders'];
 
   return (
     <div className="flex flex-wrap justify-center gap-4 p-4  rounded-lg">

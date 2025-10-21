@@ -9,12 +9,12 @@ export default function CatalogPage() {
   return (
     <div className="bg-gray-800 p-6 sm:p-8 text-gray-100 max-w-3xl sm:max-w-5xl mx-auto rounded-lg">
       <h2 className="text-4xl font-bold mb-8 text-center border-b border-gray-600 pb-4">
-        Catálogo de Produtos
+        Product Catalog
       </h2>
 
       {products.length === 0 ? (
         <p className="text-gray-300 text-center">
-          Nenhum produto disponível no momento.
+          No products available at the moment.
         </p>
       ) : (
         <ul className="space-y-4">
@@ -23,24 +23,24 @@ export default function CatalogPage() {
               key={index}
               className="flex flex-col sm:flex-row justify-between items-center bg-gray-700 p-4 rounded-lg border border-gray-100"
             >
-              {/* Informações do Produto */}
+              {/* Product Information */}
               <div className="text-center sm:text-left">
                 <span className="block font-semibold text-lg">
                   {product.name}
                 </span>
                 <span className="block text-gray-300">
-                  Preço: €{product.price.toFixed(2)}
+                  Price: €{product.price.toFixed(2)}
                 </span>
               </div>
 
-              {/* Quantidade e Botão */}
+              {/* Quantity and Button */}
               <div className="flex flex-col items-center mt-4 sm:mt-0 space-y-2">
-                {/* Destaque para a Quantidade */}
+                {/* Quantity Highlight */}
                 <span className="text-2xl font-bold text-gray-100">
-                  {product.quantity} unidades
+                  {product.quantity} units
                 </span>
 
-                {/* Botão Adicionar ao Carrinho */}
+                {/* Add to Cart Button */}
                 <button
                   onClick={() => addToCart(product.name)}
                   disabled={product.quantity === 0}
@@ -50,9 +50,7 @@ export default function CatalogPage() {
                       : 'bg-gray-500 text-gray-300 cursor-not-allowed'
                   }`}
                 >
-                  {product.quantity > 0
-                    ? 'Adicionar ao Carrinho'
-                    : 'Sem Estoque'}
+                  {product.quantity > 0 ? 'Add to Cart' : 'Out of Stock'}
                 </button>
               </div>
             </li>

@@ -14,11 +14,11 @@ export default function CartPage({ goToPayment }: { goToPayment: () => void }) {
   return (
     <div className="bg-gray-800 p-6 sm:p-8 text-gray-100 max-w-3xl sm:max-w-5xl mx-auto rounded-lg">
       <h2 className="text-4xl font-bold mb-8 text-center border-b border-gray-600 pb-4">
-        Seu Carrinho
+        Your Cart
       </h2>
 
       {cart.length === 0 ? (
-        <p className="text-gray-300 text-center">Seu carrinho está vazio.</p>
+        <p className="text-gray-300 text-center">Your cart is empty.</p>
       ) : (
         <>
           <ul className="space-y-4">
@@ -47,7 +47,7 @@ export default function CartPage({ goToPayment }: { goToPayment: () => void }) {
               onClick={goToPayment}
               className="w-full mt-4 py-3 rounded-lg bg-indigo-600 text-gray-100 font-semibold hover:bg-indigo-700 transition"
             >
-              Ir para Pagamento
+              Go to Payments
             </button>
           </div>
         </>

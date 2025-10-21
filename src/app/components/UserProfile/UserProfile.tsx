@@ -18,7 +18,7 @@ const UserProfile: React.FC = () => {
       {loggedIn ? (
         <div id="loggedInSection" className="flex flex-col items-center">
           <p id="loggedInMessage" className="text-lg font-bold mb-4">
-            Usuário {USERS.regular.login} logado
+            User {USERS.regular.login} authenticated
           </p>
           <button
             id="logoutButton"
@@ -30,7 +30,7 @@ const UserProfile: React.FC = () => {
         </div>
       ) : (
         <p id="loggedOutMessage" className="text-center">
-          Você foi desconectado. Por favor, faça login.
+          You have been logged out. Please log in.
         </p>
       )}
     </div>

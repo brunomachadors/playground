@@ -6,7 +6,7 @@ const AdditionalInfo = () => {
       id="additionalInfo"
       className="mt-8 max-w-3xl w-full text-center text-gray-300"
     >
-      <p>Quer saber mais? Acesse:</p>
+      <p>Wanna know more? Access:</p>
       <p className="m-10">
         <a
           id="bugBusterLink"

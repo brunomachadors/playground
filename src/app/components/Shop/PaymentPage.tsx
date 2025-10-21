@@ -18,21 +18,21 @@ export default function PaymentPage({
 
   const handlePayment = () => {
     if (!paymentMethod) {
-      alert('Por favor, selecione uma forma de pagamento!');
+      alert('Please select a payment method!');
       return;
     }
-    completePurchase(paymentMethod); // Registra a forma de pagamento
-    goToOrders(); // Redireciona para as ordens
+    completePurchase(paymentMethod); // Registers the payment method
+    goToOrders(); // Redirects to orders
   };
 
   return (
     <div className="bg-gray-800 p-6 sm:p-8 text-gray-100 max-w-3xl sm:max-w-5xl mx-auto rounded-lg">
       <h2 className="text-4xl font-bold mb-8 text-center border-b border-gray-600 pb-4">
-        Pagamento
+        Payment
       </h2>
 
       {cart.length === 0 ? (
-        <p className="text-gray-300 text-center">Não há itens para pagar.</p>
+        <p className="text-gray-300 text-center">No items to pay.</p>
       ) : (
         <>
           <ul className="space-y-4">
@@ -53,6 +53,7 @@ export default function PaymentPage({
               </li>
             ))}
           </ul>
+
           <div className="mt-6">
             <p className="text-xl text-center font-semibold">
               Total: €{totalAmount.toFixed(2)}
@@ -61,10 +62,10 @@ export default function PaymentPage({
 
           <div className="mt-6 space-y-4 text-center">
             <label className="block text-gray-300 text-lg font-semibold">
-              Forma de Pagamento:
+              Payment Method:
             </label>
             <div className="inline-block text-left">
-              {/* Alinha os bullet points à esquerda */}
+              {/* Aligns radio buttons to the left */}
               <div className="flex flex-col space-y-2">
                 {['MBWay', 'Klarna', 'Multibanco', 'PayPal', 'Visa'].map(
                   (method) => (
@@ -91,7 +92,7 @@ export default function PaymentPage({
             onClick={handlePayment}
             className="w-full mt-6 py-3 rounded-lg bg-indigo-600 text-gray-100 font-semibold hover:bg-indigo-700 transition"
           >
-            Confirmar Pagamento
+            Confirm Payment
           </button>
         </>
       )}
