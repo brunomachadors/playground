@@ -109,7 +109,7 @@ const NavbarMobile = () => {
               onClick={closeMenu}
               className="text-gray-300 hover:bg-gray-700 hover:text-white block px-6 py-4 rounded-md text-2xl text-center"
             >
-              SOBRE
+              ABOUT
             </Link>
           </div>
         </div>

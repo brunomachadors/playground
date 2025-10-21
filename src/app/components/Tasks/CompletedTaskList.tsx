@@ -9,7 +9,7 @@ const CompletedTaskList: React.FC<CompletedTaskListProps> = ({
 }) => {
   return (
     <div className="mt-16">
-      <h2 className="text-xl font-bold mb-4 text-center">Tarefas Completas</h2>
+      <h2 className="text-xl font-bold mb-4 text-center">Complete Tasks</h2>
       <ul id="completedTaskList" className="space-y-2">
         {completedTasks.map((task, index) => (
           <li

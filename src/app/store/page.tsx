@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Menu from '../components/Shop/Menu';
 import Instructions from '../components/Shop/Instructions';
-import StockManagement from '../components/Shop/StockManagement';
+import InventoryManagement from '../components/Shop/InventoryManagement';
 import CatalogPage from '../components/Shop/CatalogPage';
 import CartPage from '../components/Shop/CartPage';
 import PaymentPage from '../components/Shop/PaymentPage';
@@ -15,27 +15,27 @@ export default function Store() {
 
   // Função para navegar para a aba de Pagamento
   const goToPayment = () => {
-    setActiveTab('Pagamento');
+    setActiveTab('Payments');
   };
 
   // Função para navegar para a aba de Ordens
   const goToOrders = () => {
-    setActiveTab('Ordens');
+    setActiveTab('Orders');
   };
 
   const renderContent = () => {
     switch (activeTab) {
       case 'Home':
         return <Instructions />;
-      case 'Estoque':
-        return <StockManagement />;
-      case 'Catalogo':
+      case 'Inventory':
+        return <InventoryManagement />;
+      case 'Catalog':
         return <CatalogPage />;
-      case 'Carrinho':
+      case 'Cart':
         return <CartPage goToPayment={goToPayment} />;
-      case 'Pagamento':
+      case 'Payments':
         return <PaymentPage goToOrders={goToOrders} />;
-      case 'Ordens':
+      case 'Orders':
         return <OrdersPage />;
       default:
         return <Instructions />;

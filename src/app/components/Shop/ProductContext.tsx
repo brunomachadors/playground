@@ -51,17 +51,17 @@ export const useProductContext = () => {
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<Product[]>([
     { name: 'Lightsaber (Star Wars)', price: 9999.99, quantity: 2 },
-    { name: 'Pato de Borracha Gigante', price: 49.99, quantity: 15 },
-    { name: 'Repelente para Tubarões', price: 299.99, quantity: 5 },
+    { name: 'Giant Rubber Duck', price: 49.99, quantity: 15 },
+    { name: 'Shark Repellent', price: 299.99, quantity: 5 },
     {
-      name: 'Capacete de Alumínio para Proteção Contra Controle Mental Alienígena',
+      name: 'Aluminum Helmet for Protection Against Alien Mind Control',
       price: 19.99,
       quantity: 50,
     },
-    { name: 'Chave de Fenda Sônica (Doctor Who)', price: 79.99, quantity: 7 },
-    { name: 'Vela com Cheiro de Bacon', price: 14.99, quantity: 20 },
-    { name: 'Caneta Invisível', price: 9.99, quantity: 0 },
-    { name: 'Óculos para Cães', price: 24.99, quantity: 12 },
+    { name: 'Sonic Screwdriver (Doctor Who)', price: 79.99, quantity: 7 },
+    { name: 'Bacon-Scented Candle', price: 14.99, quantity: 20 },
+    { name: 'Invisible Pen', price: 9.99, quantity: 0 },
+    { name: 'Dog Sunglasses', price: 24.99, quantity: 12 },
   ]);
 
   const [cart, setCart] = useState<CartItem[]>([]);

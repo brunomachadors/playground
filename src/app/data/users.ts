@@ -1,10 +1,10 @@
 export const USERS = {
   regular: {
-    login: 'teste',
+    login: 'test',
     pass: 'password123',
   },
   bloqueado: {
-    login: 'testeblock',
+    login: 'testblock',
     pass: 'password123',
   },
 };

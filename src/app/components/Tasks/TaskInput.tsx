@@ -14,7 +14,7 @@ const TaskInput: React.FC<TaskInputProps> = ({ task, setTask, addTask }) => {
         type="text"
         value={task}
         onChange={(e) => setTask(e.target.value)}
-        placeholder="Digite sua tarefa"
+        placeholder="Describe your task"
         className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 text-white text-center placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400"
       />
       <button
@@ -22,7 +22,7 @@ const TaskInput: React.FC<TaskInputProps> = ({ task, setTask, addTask }) => {
         type="submit"
         className="w-4/12 bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded-md hover:bg-gray-400 mt-4 text-center"
       >
-        Adicionar
+        Add
       </button>
     </form>
   );

@@ -33,7 +33,7 @@ export default function Task() {
       <InstructionsTasks />
       <div className="max-w-2xl mx-auto">
         <h1 id="taskTitle" className="text-2xl font-bold mb-6 text-center">
-          Lista de Tarefas
+          To do list
         </h1>
 
         <TaskInput task={task} setTask={setTask} addTask={addTask} />

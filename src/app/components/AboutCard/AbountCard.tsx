@@ -11,12 +11,12 @@ const AboutCard = () => {
         id="aboutTitle"
         className="text-3xl font-bold text-gray-100 mb-6 text-center"
       >
-        Sobre Mim
+        About Me
       </h1>
 
       <div id="aboutDescription" className="mb-8 text-gray-300 text-center">
-        <p>Sou um engenheiro de testes apaixonado por tecnologia</p>
-        <p>e mentor na área de automação de testes.</p>
+        <p>I’m a test engineer passionate about technology</p>
+        <p>and a mentor in the field of test automation.</p>
       </div>
 
       <SocialLinks />

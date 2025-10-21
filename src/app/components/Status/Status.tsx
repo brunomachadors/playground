@@ -10,17 +10,17 @@ export function StatusLogin({ status }: StatusLoginProps) {
     <>
       {status === 'logged_in' && (
         <div id="statusLoggedIn" className="text-center text-green-500 mt-4">
-          Usuário logado com sucesso! Redirecionando...
+          User successfully logged in! Redirecting...
         </div>
       )}
       {status === 'blocked' && (
         <div id="statusBlocked" className="text-center text-red-400 mt-4">
-          Usuário bloqueado!
+          User blocked!
         </div>
       )}
       {status === 'not_found' && (
         <div id="statusNotFound" className="text-center text-orange-300 mt-4">
-          Usuário não encontrado!
+          User not found!
         </div>
       )}
       {status === 'invalid_pass' && (
@@ -28,7 +28,7 @@ export function StatusLogin({ status }: StatusLoginProps) {
           id="statusInvalidPass"
           className="text-center text-orange-300 mt-4"
         >
-          Usuário ou senha estão incorretos!
+          Incorrect username or password!
         </div>
       )}
       {status === 'temporary_block' && (
@@ -36,7 +36,7 @@ export function StatusLogin({ status }: StatusLoginProps) {
           id="statusTemporaryBlock"
           className="text-center text-orange-300 mt-4"
         >
-          Usuário bloqueado temporariamente!
+          User temporarily blocked!
         </div>
       )}
     </>

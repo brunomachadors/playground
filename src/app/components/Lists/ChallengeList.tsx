@@ -8,8 +8,8 @@ function ChallengeList() {
     >
       <section id="introSection" className="text-center mb-16">
         <p id="introText" className="text-lg max-w-4xl mx-auto">
-          Esta página foi desenvolvida pela equipe do Bug Buster Mentoria com o
-          intuito educativo.
+          This page was developed by the Bug Buster Mentorship team for
+          educational purposes.
         </p>
       </section>
       <section
@@ -20,16 +20,16 @@ function ChallengeList() {
           id="challengesTitle"
           className="text-2xl font-semibold mb-6 text-center"
         >
-          Desafios Disponíveis:
+          Available Challenges:
         </h3>
         <ul
           className="list-disc list-inside text-lg space-y-2 text-center"
           id="challengeList"
         >
           <li id="loginChallenge">Login</li>
-          <li id="formChallenge">Formulários</li>
-          <li id="tableChallenge">Tabela dinâmica</li>
-          <li id="moreChallenges">E muito mais!</li>
+          <li id="formChallenge">Forms</li>
+          <li id="tableChallenge">Dynamic Table</li>
+          <li id="moreChallenges">And much more!</li>
         </ul>
       </section>
     </main>

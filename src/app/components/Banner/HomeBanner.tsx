@@ -7,7 +7,7 @@ function HomeBanner() {
       <div className="absolute inset-0">
         <Image
           src="https://res.cloudinary.com/dtglidvcw/image/upload/v1721943129/BUGBUSTER/smsccp4wsl8o6v4tmmfb.jpg"
-          alt="Bug Buster Mentoria Banner"
+          alt="Bug Buster Mentoring Banner"
           layout="fill"
           objectFit="cover"
           priority
