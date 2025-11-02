@@ -257,12 +257,12 @@ function Form() {
               <input
                 type="checkbox"
                 name="hobbies"
-                value="reading"
+                value="books"
                 className="form-checkbox"
                 onChange={handleChange}
                 checked={formData.hobbies.includes('reading')}
               />
-              <span className="ml-2">Read</span>
+              <span className="ml-2">Read books</span>
             </label>
             <label className="inline-flex items-center">
               <input
@@ -295,30 +295,30 @@ function Form() {
                 onChange={handleChange}
                 checked={formData.hobbies.includes('sports')}
               />
-              <span className="ml-2">Television</span>
+              <span className="ml-2">Sports</span>
             </label>
 
             <label className="inline-flex items-center">
               <input
                 type="checkbox"
                 name="hobbies"
-                value="television"
+                value="movies"
                 className="form-checkbox"
                 onChange={handleChange}
                 checked={formData.hobbies.includes('television')}
               />
-              <span className="ml-2">TV Shows</span>
+              <span className="ml-2">Movies</span>
             </label>
             <label className="inline-flex items-center">
               <input
                 type="checkbox"
                 name="hobbies"
-                value="sing"
+                value="board-games"
                 className="form-checkbox"
                 onChange={handleChange}
                 checked={formData.hobbies.includes('sing')}
               />
-              <span className="ml-2">Sing</span>
+              <span className="ml-2">Board Games</span>
             </label>
           </div>
         </div>
