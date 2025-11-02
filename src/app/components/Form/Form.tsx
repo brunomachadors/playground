@@ -51,23 +51,23 @@ function Form() {
     };
 
     if (!formData.name) {
-      newErrors.name = 'O campo nome é obrigatório.';
+      newErrors.name = 'The name field is required.';
       valid = false;
     }
     if (!formData.email) {
-      newErrors.email = 'O campo email é obrigatório.';
+      newErrors.email = 'The email field is required.';
       valid = false;
     }
     if (!formData.password) {
-      newErrors.password = 'O campo senha é obrigatório.';
+      newErrors.password = 'The password field is required.';
       valid = false;
     }
     if (!formData.country) {
-      newErrors.country = 'O campo país é obrigatório.';
+      newErrors.country = 'The country field is required.';
       valid = false;
     }
     if (!formData.gender) {
-      newErrors.gender = 'O campo gênero é obrigatório.';
+      newErrors.gender = 'The gender field is required.';
       valid = false;
     }
 
