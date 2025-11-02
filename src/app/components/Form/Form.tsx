@@ -260,7 +260,7 @@ function Form() {
                 value="books"
                 className="form-checkbox"
                 onChange={handleChange}
-                checked={formData.hobbies.includes('reading')}
+                checked={formData.hobbies.includes('books')}
               />
               <span className="ml-2">Read books</span>
             </label>
@@ -305,7 +305,7 @@ function Form() {
                 value="movies"
                 className="form-checkbox"
                 onChange={handleChange}
-                checked={formData.hobbies.includes('television')}
+                checked={formData.hobbies.includes('movies')}
               />
               <span className="ml-2">Movies</span>
             </label>
@@ -316,7 +316,7 @@ function Form() {
                 value="board-games"
                 className="form-checkbox"
                 onChange={handleChange}
-                checked={formData.hobbies.includes('sing')}
+                checked={formData.hobbies.includes('board-games')}
               />
               <span className="ml-2">Board Games</span>
             </label>
