@@ -6,28 +6,44 @@ import TaskInput from '../components/Tasks/TaskInput';
 import TaskList from '../components/Tasks/TaskList';
 import CompletedTaskList from '../components/Tasks/CompletedTaskList';
 
+export interface TTask {
+  id: number;
+  text: string;
+}
+
 export default function Task() {
   const [task, setTask] = useState('');
-  const [tasks, setTasks] = useState<string[]>([]);
-  const [completedTasks, setCompletedTasks] = useState<string[]>([]);
+  const [tasks, setTasks] = useState<TTask[]>([]);
+  const [completedTasks, setCompletedTasks] = useState<TTask[]>([]);
+  const [nextId, setNextId] = useState(1); // ID sequencial
 
   const addTask = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (task.trim() !== '') {
-      setTasks([task, ...tasks]);
+    const trimmed = task.trim();
+    if (trimmed !== '') {
+      const newTask: TTask = {
+        id: nextId,
+        text: trimmed,
+      };
+      setTasks([newTask, ...tasks]);
+      setNextId((prev) => prev + 1);
       setTask('');
     }
   };
 
-  const completeTask = (index: number) => {
-    const completedTask = tasks[index];
-    setCompletedTasks([completedTask, ...completedTasks]);
-    setTasks(tasks.filter((_, i) => i !== index));
+  const completeTask = (id: number) => {
+    const taskToComplete = tasks.find((t) => t.id === id);
+    if (!taskToComplete) return;
+
+    setCompletedTasks([taskToComplete, ...completedTasks]);
+    setTasks(tasks.filter((t) => t.id !== id));
   };
 
-  const editTask = (index: number, newText: string) => {
+  const editTask = (id: number, newText: string) => {
+    const trimmed = newText.trim();
+    if (!trimmed) return;
     setTasks((prev) =>
-      prev.map((t, i) => (i === index ? newText : t))
+      prev.map((t) => (t.id === id ? { ...t, text: trimmed } : t)),
     );
   };
 

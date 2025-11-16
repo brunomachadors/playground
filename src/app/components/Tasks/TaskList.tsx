@@ -1,10 +1,11 @@
 import React from 'react';
 import TaskItem from './TaskItem';
+import type { TTask } from '@/app/tasks/page';
 
 interface TaskListProps {
-  tasks: string[];
-  completeTask: (index: number) => void;
-  editTask: (index: number, newText: string) => void;
+  tasks: TTask[];
+  completeTask: (id: number) => void;
+  editTask: (id: number, newText: string) => void;
 }
 
 const TaskList: React.FC<TaskListProps> = ({ tasks, completeTask, editTask }) => {
@@ -12,11 +13,10 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, completeTask, editTask }) =>
     <div className="mb-12">
       <h2 className="text-xl font-bold mb-4 text-center">To do list</h2>
       <ul id="taskList" className="space-y-2 relative">
-        {tasks.map((task, index) => (
+        {tasks.map((task) => (
           <TaskItem
-            key={index}
+            key={task.id}
             task={task}
-            index={index}
             completeTask={completeTask}
             editTask={editTask}
           />
