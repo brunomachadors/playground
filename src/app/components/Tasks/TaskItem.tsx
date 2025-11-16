@@ -51,7 +51,7 @@ const TaskItem: React.FC<TaskItemProps> = ({
       onDrop={() => onDrop(task.id)}
       onDragEnd={onDragEnd}
     >
-      {/* ======= MOBILE ======= */}
+      {/* ======= MOBILE (CARD) ======= */}
       <div className="flex flex-col gap-2 sm:hidden">
         {/* Cabeçalho */}
         <div className="flex justify-between items-center text-xs text-gray-200">
@@ -69,44 +69,58 @@ const TaskItem: React.FC<TaskItemProps> = ({
 
         {/* Caixa da descrição */}
         <div
-          className={`border border-gray-500 rounded-md ${
-            isEditing ? 'bg-gray-600' : 'bg-gray-700'
+          className={`border border-gray-500 rounded-md p-3 ${
+            isEditing ? 'bg-gray-800' : 'bg-gray-700'
           }`}
         >
           {isEditing ? (
-            <input
+            <textarea
               data-testid={`todo-item-edit-input-${task.id}`}
-              className="w-full bg-gray-800 rounded-md focus:outline-none text-center text-white"
+              id={`todo-item-edit-input-${task.id}`}
+              className="
+                w-full
+                bg-transparent
+                border-none
+                outline-none
+                text-left text-white text-sm leading-relaxed
+                resize-none
+                p-0
+              "
+              rows={3}
               value={editValue}
               onChange={(e) => setEditValue(e.target.value)}
             />
           ) : (
-            <span
-              className="block text-center text-gray-100 break-words"
+            <p
+              className="
+                text-left text-gray-100 text-sm leading-relaxed whitespace-normal break-words
+                p-1
+              "
               data-testid={`todo-item-text-${task.id}`}
             >
               {task.text}
-            </span>
+            </p>
           )}
         </div>
 
         {/* Ações */}
-        <div className="flex justify-end gap-2">
+        <div className="flex justify-around w-full mt-1">
           {isEditing ? (
             <>
               <button
-                data-testid={`todo-item-save-button-${task.id}`}
-                onClick={handleSave}
-                className="bg-gray-100 text-gray-800 font-bold py-1 px-3 rounded-md hover:bg-gray-300 text-xs"
-              >
-                Save
-              </button>
-              <button
                 data-testid={`todo-item-cancel-button-${task.id}`}
                 onClick={handleCancel}
-                className="bg-gray-500 text-white font-bold py-1 px-3 rounded-md hover:bg-gray-600 text-xs"
+                className="bg-gray-500 text-white font-bold py-1 px-4 rounded-md hover:bg-gray-600 text-xs"
               >
                 Cancel
+              </button>
+
+              <button
+                data-testid={`todo-item-save-button-${task.id}`}
+                onClick={handleSave}
+                className="bg-gray-100 text-gray-800 font-bold py-1 px-4 rounded-md hover:bg-gray-300 text-xs"
+              >
+                Save
               </button>
             </>
           ) : (
@@ -114,14 +128,15 @@ const TaskItem: React.FC<TaskItemProps> = ({
               <button
                 data-testid={`todo-item-edit-button-${task.id}`}
                 onClick={() => setIsEditing(true)}
-                className="bg-gray-100 text-gray-800 font-bold py-1 px-3 rounded-md hover:bg-gray-300 text-xs"
+                className="bg-gray-100 text-gray-800 font-bold py-1 px-4 rounded-md hover:bg-gray-300 text-xs"
               >
                 Edit
               </button>
+
               <button
                 data-testid={`todo-item-complete-button-${task.id}`}
                 onClick={() => completeTask(task.id)}
-                className="bg-gray-200 text-gray-800 font-bold py-1 px-3 rounded-md hover:bg-gray-400 text-xs"
+                className="bg-gray-200 text-gray-800 font-bold py-1 px-4 rounded-md hover:bg-gray-400 text-xs"
               >
                 Complete
               </button>
@@ -130,7 +145,7 @@ const TaskItem: React.FC<TaskItemProps> = ({
         </div>
       </div>
 
-      {/* ======= DESKTOP ======= */}
+      {/* ======= DESKTOP (TABELA) ======= */}
       <div className="hidden sm:flex sm:items-center sm:gap-2">
         {/* ID */}
         <span className="font-mono text-sm text-gray-300 sm:w-10">
@@ -145,23 +160,33 @@ const TaskItem: React.FC<TaskItemProps> = ({
           {priority}
         </span>
 
+        {/* Descrição */}
         <div className="sm:flex-1">
           <div
-            className={`border border-gray-500 rounded-md${
-              isEditing ? 'bg-gray-600' : 'bg-gray-700'
+            className={`border border-gray-500 rounded-md px-2 py-1 ${
+              isEditing ? 'bg-gray-800' : 'bg-gray-700'
             }`}
           >
             {isEditing ? (
               <input
-                data-testid={`todo-item-edit-input-${task.id}`}
-                className="w-full bg-gray-800 rounded-md focus:outline-none text-center text-white"
+                data-testid={`todo-item-edit-input-desktop-${task.id}`}
+                id={`todo-item-edit-input-desktop-${task.id}`}
+                className="
+                  w-full
+                  bg-transparent
+                  border-none
+                  outline-none
+                  text-center text-white text-sm
+                  leading-relaxed
+                "
                 value={editValue}
                 onChange={(e) => setEditValue(e.target.value)}
               />
             ) : (
               <span
-                className="block text-center text-gray-100 break-words"
+                className="block text-center text-gray-100 break-words text-sm"
                 data-testid={`todo-item-text-${task.id}`}
+                onDoubleClick={() => setIsEditing(true)}
               >
                 {task.text}
               </span>
@@ -174,31 +199,24 @@ const TaskItem: React.FC<TaskItemProps> = ({
           {isEditing ? (
             <>
               <button
-                data-testid={`todo-item-save-button-${task.id}`}
-                onClick={handleSave}
-                className="bg-gray-100 text-gray-800 font-bold py-1 px-2 rounded-md hover:bg-gray-300 text-xs"
-              >
-                Save
-              </button>
-              <button
-                data-testid={`todo-item-cancel-button-${task.id}`}
+                data-testid={`todo-item-cancel-button-desktop-${task.id}`}
                 onClick={handleCancel}
                 className="bg-gray-500 text-white font-bold py-1 px-2 rounded-md hover:bg-gray-600 text-xs"
               >
                 Cancel
               </button>
+              <button
+                data-testid={`todo-item-save-button-desktop-${task.id}`}
+                onClick={handleSave}
+                className="bg-gray-100 text-gray-800 font-bold py-1 px-2 rounded-md hover:bg-gray-300 text-xs"
+              >
+                Save
+              </button>
             </>
           ) : (
             <>
               <button
-                data-testid={`todo-item-edit-button-${task.id}`}
-                onClick={() => setIsEditing(true)}
-                className="bg-gray-100 text-gray-800 font-bold py-1 px-2 rounded-md hover:bg-gray-300 text-xs"
-              >
-                Edit
-              </button>
-              <button
-                data-testid={`todo-item-complete-button-${task.id}`}
+                data-testid={`todo-item-complete-button-desktop-${task.id}`}
                 onClick={() => completeTask(task.id)}
                 className="bg-gray-200 text-gray-800 font-bold py-1 px-2 rounded-md hover:bg-gray-400 text-xs"
               >

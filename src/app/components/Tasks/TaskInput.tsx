@@ -10,7 +10,7 @@ const TaskInput: React.FC<TaskInputProps> = ({ task, setTask, addTask }) => {
   return (
     <form
       onSubmit={addTask}
-      className="mb-8 flex flex-col gap-2 items-center"
+      className="mb-8 flex flex-col gap-2 items-center w-full max-w-md mx-auto"
       data-testid="task-form"
     >
       <input

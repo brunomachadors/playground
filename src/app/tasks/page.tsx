@@ -27,12 +27,11 @@ export default function Task() {
       text: trimmed,
     };
 
-    setTasks((prev) => [...prev, newTask]); // adiciona no fim
+    setTasks((prev) => [...prev, newTask]);
     setNextId((prev) => prev + 1);
     setTask('');
   };
 
-  // 🔧 VERSÃO CERTA AQUI
   const completeTask = (id: number) => {
     const taskToComplete = tasks.find((t) => t.id === id);
     if (!taskToComplete) return;
@@ -46,7 +45,7 @@ export default function Task() {
     if (!trimmed) return;
 
     setTasks((prev) =>
-      prev.map((t) => (t.id === id ? { ...t, text: trimmed } : t)),
+      prev.map((t) => (t.id === id ? { ...t, text: trimmed } : t))
     );
   };
 
@@ -71,7 +70,7 @@ export default function Task() {
     >
       <InstructionsTasks />
 
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <h1
           id="taskTitle"
           className="text-2xl font-bold mb-6 text-center"
@@ -80,7 +79,10 @@ export default function Task() {
           To do list
         </h1>
 
-        <TaskInput task={task} setTask={setTask} addTask={addTask} />
+        {/* centraliza o formulário / input */}
+        <div className="flex justify-center">
+          <TaskInput task={task} setTask={setTask} addTask={addTask} />
+        </div>
 
         {tasks.length > 0 && (
           <TaskList
