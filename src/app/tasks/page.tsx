@@ -5,8 +5,6 @@ import { InstructionsTasks } from '../components/Instructions/Instructions';
 import TaskInput from '../components/Tasks/TaskInput';
 import TaskList from '../components/Tasks/TaskList';
 import CompletedTaskList from '../components/Tasks/CompletedTaskList';
-import { TEST_IDS } from '../utils/constants';
-
 
 export default function Task() {
   const [task, setTask] = useState('');
@@ -27,29 +25,28 @@ export default function Task() {
     setTasks(tasks.filter((_, i) => i !== index));
   };
 
+  const editTask = (index: number, newText: string) => {
+    setTasks((prev) =>
+      prev.map((t, i) => (i === index ? newText : t))
+    );
+  };
+
   return (
     <div
       id="task"
-      data-testid={TEST_IDS.page.taskPage}
       className="min-h-screen bg-gray-800 pt-2 px-4 sm:px-6 lg:px-8"
     >
       <InstructionsTasks />
-
       <div className="max-w-2xl mx-auto">
-        <h1
-          id="taskTitle"
-          data-testid={TEST_IDS.page.taskTitle}
-          className="text-2xl font-bold mb-6 text-center"
-        >
+        <h1 id="taskTitle" className="text-2xl font-bold mb-6 text-center">
           To do list
         </h1>
 
         <TaskInput task={task} setTask={setTask} addTask={addTask} />
 
         {tasks.length > 0 && (
-          <TaskList tasks={tasks} completeTask={completeTask} />
+          <TaskList tasks={tasks} completeTask={completeTask} editTask={editTask} />
         )}
-
         {completedTasks.length > 0 && (
           <CompletedTaskList completedTasks={completedTasks} />
         )}
