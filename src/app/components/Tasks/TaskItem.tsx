@@ -61,7 +61,7 @@ const TaskItem: React.FC<TaskItemProps> = ({
 
           <span
             className="font-mono"
-            data-testid={`todo-item-priority-${task.id}`}
+            data-testid={`todo-item-priority-mobile-${task.id}`}
           >
             <span className="text-gray-400">Priority:</span> {priority}
           </span>
@@ -75,7 +75,7 @@ const TaskItem: React.FC<TaskItemProps> = ({
         >
           {isEditing ? (
             <textarea
-              data-testid={`todo-item-edit-input-${task.id}`}
+              data-testid={`todo-item-edit-input-mobile-${task.id}`}
               id={`todo-item-edit-input-${task.id}`}
               className="
                 w-full
@@ -96,7 +96,7 @@ const TaskItem: React.FC<TaskItemProps> = ({
                 text-left text-gray-100 text-sm leading-relaxed whitespace-normal break-words
                 p-1
               "
-              data-testid={`todo-item-text-${task.id}`}
+              data-testid={`todo-item-text-mobile-${task.id}`}
             >
               {task.text}
             </p>
@@ -108,7 +108,7 @@ const TaskItem: React.FC<TaskItemProps> = ({
           {isEditing ? (
             <>
               <button
-                data-testid={`todo-item-cancel-button-${task.id}`}
+                data-testid={`todo-item-cancel-button-mobile-${task.id}`}
                 onClick={handleCancel}
                 className="bg-gray-500 text-white font-bold py-1 px-4 rounded-md hover:bg-gray-600 text-xs"
               >
@@ -116,7 +116,7 @@ const TaskItem: React.FC<TaskItemProps> = ({
               </button>
 
               <button
-                data-testid={`todo-item-save-button-${task.id}`}
+                data-testid={`todo-item-save-button-mobile-${task.id}`}
                 onClick={handleSave}
                 className="bg-gray-100 text-gray-800 font-bold py-1 px-4 rounded-md hover:bg-gray-300 text-xs"
               >
@@ -126,7 +126,7 @@ const TaskItem: React.FC<TaskItemProps> = ({
           ) : (
             <>
               <button
-                data-testid={`todo-item-edit-button-${task.id}`}
+                data-testid={`todo-item-edit-button-mobile-${task.id}`}
                 onClick={() => setIsEditing(true)}
                 className="bg-gray-100 text-gray-800 font-bold py-1 px-4 rounded-md hover:bg-gray-300 text-xs"
               >
@@ -134,7 +134,7 @@ const TaskItem: React.FC<TaskItemProps> = ({
               </button>
 
               <button
-                data-testid={`todo-item-complete-button-${task.id}`}
+                data-testid={`todo-item-complete-button-mobile-${task.id}`}
                 onClick={() => completeTask(task.id)}
                 className="bg-gray-200 text-gray-800 font-bold py-1 px-4 rounded-md hover:bg-gray-400 text-xs"
               >
@@ -155,7 +155,7 @@ const TaskItem: React.FC<TaskItemProps> = ({
         {/* Priority */}
         <span
           className="font-mono text-xs text-gray-200 sm:w-16 text-center"
-          data-testid={`todo-item-priority-${task.id}`}
+          data-testid={`todo-item-priority-desktop-${task.id}`}
         >
           {priority}
         </span>
@@ -185,7 +185,7 @@ const TaskItem: React.FC<TaskItemProps> = ({
             ) : (
               <span
                 className="block text-center text-gray-100 break-words text-sm"
-                data-testid={`todo-item-text-${task.id}`}
+                data-testid={`todo-item-text-desktop-${task.id}`}
                 onDoubleClick={() => setIsEditing(true)}
               >
                 {task.text}
