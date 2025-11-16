@@ -1,4 +1,6 @@
+import { TEST_IDS } from '@/app/utils/constants';
 import React from 'react';
+
 
 interface TaskItemProps {
   task: string;
@@ -11,11 +13,14 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, index, completeTask }) => {
     <li
       key={index}
       id={`task-${index}`}
+      data-testid={TEST_IDS.list.todoItem(index)}
       className="bg-gray-700 p-3 rounded-md shadow-md relative"
     >
       <span className="flex-1 text-center block">{task}</span>
+
       <button
         id={`completeButton-${index}`}
+        data-testid={TEST_IDS.list.todoItemCompleteButton(index)}
         onClick={() => completeTask(index)}
         className="bg-gray-200 text-gray-800 font-bold py-1 px-2 rounded-md hover:bg-gray-400 absolute right-2 top-1/2 transform -translate-y-1/2"
       >
