@@ -11,42 +11,30 @@ export default function Instructions() {
   return (
     <div
       id="instructionsContainer"
-      data-testid="instructions-page"
       className="bg-gray-800 p-6 text-gray-100 max-w-3xl sm:max-w-5xl mx-auto"
     >
       <h2
         id="instructionsHeader"
-        data-testid="instructions-title"
         className="text-4xl font-bold mb-8 text-center border-b border-gray-600 pb-4"
       >
         Instructions
       </h2>
 
-      <p
-        className="mb-8 text-lg text-gray-300 text-center"
-        data-testid="instructions-description"
-      >
+      <p className="mb-8 text-lg text-gray-300 text-center">
         Learn how to make the most of all the features in our application with
         these quick and easy-to-follow instructions. Each section is designed to
         make your experience even better!
       </p>
 
-      <div className="flex flex-col space-y-8" data-testid="instructions-list">
-
+      <div className="flex flex-col space-y-8">
         {/* Inventory */}
-        <div
-          className="flex items-center space-x-6 border border-gray-100 p-6 rounded-lg"
-          data-testid="instructions-section-inventory"
-        >
+        <div className="flex items-center space-x-6 border border-gray-100 p-6 rounded-lg">
           <FaWarehouse className="text-7xl text-gray-100" />
           <div>
-            <h3
-              className="text-2xl font-semibold text-gray-100 mb-2"
-              data-testid="instructions-inventory-title"
-            >
+            <h3 className="text-2xl font-semibold text-gray-100 mb-2">
               Inventory
             </h3>
-            <p className="text-gray-300" data-testid="instructions-inventory-text">
+            <p className="text-gray-300">
               Manage the store’s inventory and register new products by defining
               their name, price, and initial quantity.
             </p>
@@ -54,19 +42,13 @@ export default function Instructions() {
         </div>
 
         {/* Catalog */}
-        <div
-          className="flex items-center space-x-6 border border-gray-100 p-6 rounded-lg"
-          data-testid="instructions-section-catalog"
-        >
+        <div className="flex items-center space-x-6 border border-gray-100 p-6 rounded-lg">
           <FaStore className="text-7xl text-gray-100" />
           <div>
-            <h3
-              className="text-2xl font-semibold text-gray-100 mb-2"
-              data-testid="instructions-catalog-title"
-            >
+            <h3 className="text-2xl font-semibold text-gray-100 mb-2">
               Catalog
             </h3>
-            <p className="text-gray-300" data-testid="instructions-catalog-text">
+            <p className="text-gray-300">
               Browse the available products, view details, and add them to your
               cart for purchase.
             </p>
@@ -74,65 +56,43 @@ export default function Instructions() {
         </div>
 
         {/* Cart */}
-        <div
-          className="flex items-center space-x-6 border border-gray-100 p-6 rounded-lg"
-          data-testid="instructions-section-cart"
-        >
+        <div className="flex items-center space-x-6 border border-gray-100 p-6 rounded-lg">
           <FaShoppingCart className="text-7xl text-gray-100" />
           <div>
-            <h3
-              className="text-2xl font-semibold text-gray-100 mb-2"
-              data-testid="instructions-cart-title"
-            >
-              Cart
-            </h3>
-            <p className="text-gray-300" data-testid="instructions-cart-text">
-              View the items you’ve added, update their quantities, or remove
-              them. When ready, proceed to checkout.
+            <h3 className="text-2xl font-semibold text-gray-100 mb-2">Cart</h3>
+            <p className="text-gray-300">
+              View the items you’ve added, and updated quantities. When ready,
+              proceed to checkout.
             </p>
           </div>
         </div>
 
         {/* Payment */}
-        <div
-          className="flex items-center space-x-6 border border-gray-100 p-6 rounded-lg"
-          data-testid="instructions-section-payment"
-        >
+        <div className="flex items-center space-x-6 border border-gray-100 p-6 rounded-lg">
           <FaCreditCard className="text-7xl text-gray-100" />
           <div>
-            <h3
-              className="text-2xl font-semibold text-gray-100 mb-2"
-              data-testid="instructions-payment-title"
-            >
+            <h3 className="text-2xl font-semibold text-gray-100 mb-2">
               Payment
             </h3>
-            <p className="text-gray-300" data-testid="instructions-payment-text">
-              Complete your purchase by selecting your preferred payment method.
-              You’ll see a summary of the cart items before finalizing.
+            <p className="text-gray-300">
+              You’ll see a summary of the cart items before finalizing. Complete
+              your purchase by selecting your preferred payment method.
             </p>
           </div>
         </div>
 
         {/* Orders */}
-        <div
-          className="flex items-center space-x-6 border border-gray-100 p-6 rounded-lg"
-          data-testid="instructions-section-orders"
-        >
+        <div className="flex items-center space-x-6 border border-gray-100 p-6 rounded-lg">
           <FaClipboardList className="text-7xl text-gray-100" />
           <div>
-            <h3
-              className="text-2xl font-semibold text-gray-100 mb-2"
-              data-testid="instructions-orders-title"
-            >
+            <h3 className="text-2xl font-semibold text-gray-100 mb-2">
               Orders
             </h3>
-            <p className="text-gray-300" data-testid="instructions-orders-text">
-              Review your purchase history, including details about the items
-              bought, total paid, and order date.
+            <p className="text-gray-300">
+              Review your purchase history, including details the order.
             </p>
           </div>
         </div>
-
       </div>
     </div>
   );
