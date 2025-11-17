@@ -13,12 +13,10 @@ import OrdersPage from '../components/Shop/OrdersPage';
 export default function Store() {
   const [activeTab, setActiveTab] = useState('Home');
 
-  // Função para navegar para a aba de Pagamento
   const goToPayment = () => {
     setActiveTab('Payments');
   };
 
-  // Função para navegar para a aba de Ordens
   const goToOrders = () => {
     setActiveTab('Orders');
   };
@@ -44,12 +42,18 @@ export default function Store() {
 
   return (
     <ProductProvider>
-      <div className="pt-8 flex flex-col items-center">
-        {/* Menu de Navegação */}
+      <div
+        className="pt-8 flex flex-col items-center"
+        data-testid="store-page"
+      >
+        {/* Navigation Menu */}
         <Menu activeTab={activeTab} setActiveTab={setActiveTab} />
 
-        {/* Conteúdo da Aba Ativa */}
-        <div className="p-8 w-full max-w-4xl text-center">
+        {/* Active Tab Content */}
+        <div
+          className="p-8 w-full max-w-4xl text-center"
+          data-testid="store-active-tab-content"
+        >
           {renderContent()}
         </div>
       </div>
