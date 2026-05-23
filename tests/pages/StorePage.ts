@@ -325,7 +325,9 @@ export class StorePage {
     await test.step('Check that the order was created', async () => {
       await expect(this.orderByIndex(orderIndex)).toBeVisible();
 
-      for (const [productIndex, product] of products.entries()) {
+      for (let productIndex = 0; productIndex < products.length; productIndex++) {
+        const product = products[productIndex];
+
         await expect(
           this.orderProductNameByIndex(orderIndex, productIndex)
         ).toContainText(product.name);
