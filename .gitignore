@@ -32,3 +32,6 @@ Thumbs.db
 
 # Linux specific files
 *~
+
+/test-results
+/playwright-report
