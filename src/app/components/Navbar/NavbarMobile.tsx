@@ -105,6 +105,13 @@ const NavbarMobile = () => {
               STORE
             </Link>
             <Link
+              href="/accessibility"
+              onClick={closeMenu}
+              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-6 py-4 rounded-md text-2xl text-center"
+            >
+              A11Y
+            </Link>
+            <Link
               href="/about"
               onClick={closeMenu}
               className="text-gray-300 hover:bg-gray-700 hover:text-white block px-6 py-4 rounded-md text-2xl text-center"
